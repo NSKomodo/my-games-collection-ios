@@ -1,0 +1,278 @@
+{
+    "First Person Shooter": [
+        {
+            "title": "Call of Duty: Advanced Warfare",
+            "description": "Call of Duty®: Advanced Warfare, developed by Sledgehammer Games (co-developers of Call of Duty®: Modern Warfare® 3), harnesses the first three-year, all next-gen development cycle in franchise history. Call of Duty®: Advanced Warfare envisions the powerful battlegrounds of the future, where both technology and tactic have evolved to usher in a new era of combat for the franchise. Delivering a stunning performance, Academy Award® winning actor Kevin Spacey stars as Jonathan Irons - one of the most powerful men in the world - shaping this chilling vision of the future of war.",
+            "genre": "First Person Shooter",
+            "publisher": "Activision",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "http://www.gamestop.com/xbox-one/games/call-of-duty-advanced-warfare/114916",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": "https://lh3.googleusercontent.com/-NtZgbyJwKJA/AAAAAAAAAAI/AAAAAAAAANw/c0RShpXgaaU/photo.jpg"
+        },
+        {
+            "title": "Destiny",
+            "description": "",
+            "genre": "First Person Shooter",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Far Cry 4",
+            "description": "",
+            "genre": "First Person Shooter",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Killzone Shadow Fall",
+            "description": "",
+            "genre": "First Person Shooter",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Call of Duty: Ghosts",
+            "description": "",
+            "genre": "First Person Shooter",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Battlefield Hardline",
+            "description": "",
+            "genre": "First Person Shooter",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Battlefield 4",
+            "description": "",
+            "genre": "First Person Shooter",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Call of Duty: Advanced Warfare",
+            "description": "",
+            "genre": "First Person Shooter",
+            "publisher": "",
+            "platform": "XBOX ONE",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Titanfall",
+            "description": "",
+            "genre": "First Person Shooter",
+            "publisher": "",
+            "platform": "XBOX ONE",
+            "modes": "Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Call of Duty: Ghosts",
+            "description": "",
+            "genre": "First Person Shooter",
+            "publisher": "",
+            "platform": "XBOX ONE",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Halo: The Master Chief Collection",
+            "description": "",
+            "genre": "First Person Shooter",
+            "publisher": "",
+            "platform": "XBOX ONE",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        }
+    ],
+    "Third Person Shooter": [
+        {
+            "title": "Grand Theft Auto V",
+            "description": "",
+            "genre": "Third Person Shooter",
+            "publisher": "Rockstar Games",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "KNACK",
+            "description": "",
+            "genre": "Third Person Shooter",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Tomb Raider Definitive Edition",
+            "description": "",
+            "genre": "Third Person Shooter",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "inFAMOUS Second Son",
+            "description": "",
+            "genre": "Third Person Shooter",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Sniper Elite III",
+            "description": "",
+            "genre": "Third Person Shooter",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "The Last Of Us Remastered",
+            "description": "",
+            "genre": "Third Person Shooter",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Dead Rising 3",
+            "description": "",
+            "genre": "Third Person Shooter",
+            "publisher": "",
+            "platform": "XBOX ONE",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "Plants VS Zombies: Garden Warfare",
+            "description": "",
+            "genre": "Third Person Shooter",
+            "publisher": "",
+            "platform": "XBOX ONE",
+            "modes": "Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        }
+    ],
+    "Role Playing Game": [
+        {
+            "title": "Middle-Earth: Shadow of Mordor",
+            "description": "",
+            "genre": "Role Playing Game",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        },
+        {
+            "title": "RYSE: Son of Rome",
+            "description": "",
+            "genre": "Role Playing Game",
+            "publisher": "",
+            "platform": "XBOX ONE",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        }
+    ],
+    "Sports": [
+        {
+            "title": "FIFA 15",
+            "description": "",
+            "genre": "Sports",
+            "publisher": "",
+            "platform": "XBOX ONE",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        }
+    ],
+    "Fighting": [
+        {
+            "title": "Mortal Kombat X",
+            "description": "",
+            "genre": "Fighting",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        }
+    ],
+    "Music & Rythm": [
+        {
+            "title": "Just Dance 2015",
+            "description": "",
+            "genre": "Music & Rythm",
+            "publisher": "",
+            "platform": "PS4",
+            "modes": "Single player | Online Multiplayer",
+            "buy": "",
+            "thumbnail": "Call of Duty: Advanced Warfare",
+            "source": ""
+        }
+    ]
+}
