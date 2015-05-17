@@ -10,6 +10,18 @@ import UIKit
 import CoreData
 
 extension Genre {
+    
+    class func createNew(title: String?) -> Genre? {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedObjectContext = appDelegate.managedObjectContext
+        
+        let platformEntity = NSEntityDescription.entityForName("Genre", inManagedObjectContext: managedObjectContext!)
+        
+        var newGenre = Genre(entity: platformEntity!, insertIntoManagedObjectContext: managedObjectContext)
+        newGenre.title = title != nil ? title! : String()
+        
+        return newGenre
+    }
 
     class func genreWithTitle(title: String) -> Genre? {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

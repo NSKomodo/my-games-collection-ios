@@ -6,8 +6,8 @@
             "genre": "First Person Shooter",
             "publisher": "Activision",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
-            "buy": "http://www.gamestop.com/xbox-one/games/call-of-duty-advanced-warfare/114916",
+            "modes": "Single Player\nOnline Multiplayer",
+            "buy": "http://www.gamestop.com/ps4/games/call-of-duty-advanced-warfare/114918",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": "https://lh3.googleusercontent.com/-NtZgbyJwKJA/AAAAAAAAAAI/AAAAAAAAANw/c0RShpXgaaU/photo.jpg"
         },
@@ -17,7 +17,7 @@
             "genre": "First Person Shooter",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -28,7 +28,7 @@
             "genre": "First Person Shooter",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -39,7 +39,7 @@
             "genre": "First Person Shooter",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -50,7 +50,7 @@
             "genre": "First Person Shooter",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -61,7 +61,7 @@
             "genre": "First Person Shooter",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -72,21 +72,21 @@
             "genre": "First Person Shooter",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
         },
         {
             "title": "Call of Duty: Advanced Warfare",
-            "description": "",
+            "description": "Call of Duty®: Advanced Warfare, developed by Sledgehammer Games (co-developers of Call of Duty®: Modern Warfare® 3), harnesses the first three-year, all next-gen development cycle in franchise history. Call of Duty®: Advanced Warfare envisions the powerful battlegrounds of the future, where both technology and tactic have evolved to usher in a new era of combat for the franchise. Delivering a stunning performance, Academy Award® winning actor Kevin Spacey stars as Jonathan Irons - one of the most powerful men in the world - shaping this chilling vision of the future of war.",
             "genre": "First Person Shooter",
-            "publisher": "",
+            "publisher": "Activision",
             "platform": "XBOX ONE",
-            "modes": "Single player | Online Multiplayer",
-            "buy": "",
+            "modes": "Single Player\nOnline Multiplayer",
+            "buy": "http://www.gamestop.com/xbox-one/games/call-of-duty-advanced-warfare/114916",
             "thumbnail": "Call of Duty: Advanced Warfare",
-            "source": ""
+            "source": "https://lh3.googleusercontent.com/-NtZgbyJwKJA/AAAAAAAAAAI/AAAAAAAAANw/c0RShpXgaaU/photo.jpg"
         },
         {
             "title": "Titanfall",
@@ -105,7 +105,7 @@
             "genre": "First Person Shooter",
             "publisher": "",
             "platform": "XBOX ONE",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -116,7 +116,7 @@
             "genre": "First Person Shooter",
             "publisher": "",
             "platform": "XBOX ONE",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -129,7 +129,7 @@
             "genre": "Third Person Shooter",
             "publisher": "Rockstar Games",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -140,7 +140,7 @@
             "genre": "Third Person Shooter",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player",
+            "modes": "Single Player",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -151,7 +151,7 @@
             "genre": "Third Person Shooter",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -162,7 +162,7 @@
             "genre": "Third Person Shooter",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player",
+            "modes": "Single Player",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -173,7 +173,7 @@
             "genre": "Third Person Shooter",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -184,7 +184,7 @@
             "genre": "Third Person Shooter",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -195,7 +195,7 @@
             "genre": "Third Person Shooter",
             "publisher": "",
             "platform": "XBOX ONE",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -219,7 +219,7 @@
             "genre": "Role Playing Game",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player",
+            "modes": "Single Player",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -230,7 +230,7 @@
             "genre": "Role Playing Game",
             "publisher": "",
             "platform": "XBOX ONE",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -243,7 +243,7 @@
             "genre": "Sports",
             "publisher": "",
             "platform": "XBOX ONE",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -256,7 +256,7 @@
             "genre": "Fighting",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""
@@ -269,7 +269,7 @@
             "genre": "Music & Rythm",
             "publisher": "",
             "platform": "PS4",
-            "modes": "Single player | Online Multiplayer",
+            "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
             "thumbnail": "Call of Duty: Advanced Warfare",
             "source": ""

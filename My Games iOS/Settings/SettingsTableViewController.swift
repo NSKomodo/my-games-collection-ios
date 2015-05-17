@@ -37,8 +37,10 @@ class SettingsTableViewController: UITableViewController, UIAlertViewDelegate {
             performSegueWithIdentifier("aboutSegue", sender: nil)
         } else if indexPath.section == 1 && indexPath.row == 0 {
             // Manage genres
+            performSegueWithIdentifier("manageGenresSegue", sender: nil)
         } else if indexPath.section == 1 && indexPath.row == 1 {
             // Manage platforms
+            performSegueWithIdentifier("managePlatformsSegue", sender: nil)
         } else if indexPath.section == 2 && indexPath.row == 0  {
             // Import JSON content
             alert = UIAlertView(title: "My Games Collection", message: "This action will replace all current data with content from the provided JSON file and cannot be undone. Do you want to import dummy content from JSON file?", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Yes")

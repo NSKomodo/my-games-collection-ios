@@ -10,6 +10,18 @@ import UIKit
 import CoreData
 
 extension Platform {
+    
+    class func createNew(title: String?) -> Platform? {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedObjectContext = appDelegate.managedObjectContext
+        
+        let platformEntity = NSEntityDescription.entityForName("Platform", inManagedObjectContext: managedObjectContext!)
+        
+        var newPlatform = Platform(entity: platformEntity!, insertIntoManagedObjectContext: managedObjectContext)
+        newPlatform.title = title != nil ? title! : String()
+        
+        return newPlatform
+    }
 
     class func platformWithTitle(title: String) -> Platform? {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

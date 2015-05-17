@@ -46,8 +46,8 @@ class DetailTableViewController: UITableViewController {
         if indexPath.section == 0 {
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             
-            cell.textLabel?.numberOfLines = 0
-            cell.textLabel?.text = game.modes
+            cell.detailTextLabel?.numberOfLines = 0
+            cell.detailTextLabel?.text = game.modes
             
             cell.imageView?.image = UIImage(named: game.thumbnail.title)
         } else if indexPath.section == 1 {
@@ -81,11 +81,23 @@ class DetailTableViewController: UITableViewController {
     }
     
     // MARK: Table view delegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 2 {
+            if indexPath.row == 0 {
+                UIApplication.sharedApplication().openURL(NSURL(string: game.source)!)
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            } else {
+                UIApplication.sharedApplication().openURL(NSURL(string: game.buy)!)
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            }
+        }
+    }
+    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 88
         } else if indexPath.section == 3 {
-            if (game.desc.isEmpty) {
+            if game.desc.isEmpty {
                 return 44
             } else {
                 let descText = game.desc as NSString

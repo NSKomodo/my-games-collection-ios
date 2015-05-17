@@ -66,7 +66,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Game Collection" id="qkK-7c-MaK">
-                        <barButtonItem key="leftBarButtonItem" image="settings_icon" id="zfG-10-wpI" userLabel="Settings">
+                        <barButtonItem key="leftBarButtonItem" image="settings_icon" style="done" id="zfG-10-wpI" userLabel="Settings">
                             <connections>
                                 <action selector="settingsAction:" destination="WQz-gv-1Ar" id="QYX-mf-eKP"/>
                             </connections>
@@ -242,7 +242,7 @@
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Q9-Og-gM9">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <mutableString key="text">Call of Duty®: Advanced Warfare, developed by Sledgehammer Games (co-developers of Call of Duty®: Modern Warfare® 3), harnesses the first three-year, all next-gen development cycle in franchise history. Call of Duty®: Advanced Warfare envisions the powerful battlegrounds of the future, where both technology and tactic have evolved to usher in a new era of combat for the franchise. Delivering a stunning performance, Academy Award® winning actor Kevin Spacey stars as Jonathan Irons - one of the most powerful men in the world - shaping this chilling vision of the future of war.</mutableString>
+                                                    <string key="text">Call of Duty®: Advanced Warfare, developed by Sledgehammer Games (co-developers of Call of Duty®: Modern Warfare® 3), harnesses the first three-year, all next-gen development cycle in franchise history. Call of Duty®: Advanced Warfare envisions the powerful battlegrounds of the future, where both technology and tactic have evolved to usher in a new era of combat for the franchise. Delivering a stunning performance, Academy Award® winning actor Kevin Spacey stars as Jonathan Irons - one of the most powerful men in the world - shaping this chilling vision of the future of war.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -312,6 +312,7 @@
         <!--Settings-->
         <scene sceneID="tT0-bC-Lkx">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUe-EQ-Bjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="X4U-rd-YvI" customClass="SettingsTableViewController" customModule="My_Games_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="jV8-0Y-FIs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -382,7 +383,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import Dummy Content from JSON File" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzH-03-7df">
                                                     <rect key="frame" x="15" y="12" width="577" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.46274509800000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.050980392156862744" green="0.58039215686274515" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -401,7 +402,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete All Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ori-Bu-fUO">
                                                     <rect key="frame" x="15" y="12" width="577" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.46274509803921571" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.050980392156862744" green="0.58039215686274515" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -429,9 +430,10 @@
                     </navigationItem>
                     <connections>
                         <segue destination="XoT-Co-QoI" kind="show" identifier="aboutSegue" id="lAi-kd-egR"/>
+                        <segue destination="rpc-i3-EJv" kind="show" identifier="manageGenresSegue" id="CsZ-IL-7Vp"/>
+                        <segue destination="hrz-Ab-pY6" kind="show" identifier="managePlatformsSegue" id="vXw-El-55X"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YUe-EQ-Bjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="823" y="-340"/>
         </scene>
@@ -447,13 +449,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lU8-Ej-GL0">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lU8-Ej-GL0">
                                 <rect key="frame" x="0.0" y="471" width="600" height="119"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">This app was made by Jorge Tapia at Full Sail University for the Mobile Interfaces and Usability course taught by Doug Arley on May, 2015.  Technology Stack:  Swift programming language Cocoa Touch Foundation UIKit CoreData CocoaPods  Contact Information:  Personal Website: http://jorgetapia.net  GitHub: http://github.com/georgetapia  StackOverFlow: http://stackoverflow.com/users/3654626/georgetapia  Twitter: http://twitter.com/itsProf</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">This app was made by Jorge Tapia at Full Sail University for the Mobile Interfaces and Usability course taught by Douglas Arley on May, 2015. All text descriptions were taken from Gamestop and are of their property. All products depicted here and their trademarks are property of their respective owners, used exclusively for academic purposes.  Gamestop: http://gamestop.com
+
+Full Sail University: http://fullsail.edu  </string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="App Technology Stack:">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="  · Swift programming language · Cocoa Touch · Foundation · UIKit · CoreData · CocoaPods  ">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Contact Information:">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">  Personal Website: http://jorgetapia.net  GitHub: http://github.com/georgetapia  StackOverFlow: http://stackoverflow.com/users/3654626/georgetapia  Twitter: http://twitter.com/itsProf</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="369" y="64" width="231" height="336"/>
+                                </variation>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_picture" translatesAutoresizingMaskIntoConstraints="NO" id="yRb-4G-1MP">
                                 <rect key="frame" x="0.0" y="64" width="600" height="399"/>
@@ -488,6 +527,7 @@
                             <constraint firstItem="yRb-4G-1MP" firstAttribute="top" secondItem="MGP-x9-taU" secondAttribute="bottom" id="Tac-wY-gpe"/>
                             <constraint firstItem="yRb-4G-1MP" firstAttribute="top" secondItem="MGP-x9-taU" secondAttribute="bottom" id="VQV-E2-axN"/>
                             <constraint firstItem="yRb-4G-1MP" firstAttribute="leading" secondItem="xcY-t1-5qv" secondAttribute="leading" id="XRk-n2-KFS"/>
+                            <constraint firstAttribute="centerY" secondItem="yRb-4G-1MP" secondAttribute="centerY" constant="-32" id="XVW-vX-Z4d"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yRb-4G-1MP" secondAttribute="trailing" constant="223" id="dvh-Lu-O5d"/>
                             <constraint firstItem="yRb-4G-1MP" firstAttribute="bottom" secondItem="lU8-Ej-GL0" secondAttribute="bottom" id="ePd-5C-XJU"/>
                             <constraint firstItem="nbJ-r6-ybk" firstAttribute="top" secondItem="lU8-Ej-GL0" secondAttribute="bottom" constant="10" id="fXY-Je-Qqp"/>
@@ -508,6 +548,7 @@
                                 <exclude reference="9dH-Zb-EBE"/>
                                 <exclude reference="Tac-wY-gpe"/>
                                 <exclude reference="XRk-n2-KFS"/>
+                                <exclude reference="XVW-vX-Z4d"/>
                                 <exclude reference="dvh-Lu-O5d"/>
                                 <exclude reference="ePd-5C-XJU"/>
                                 <exclude reference="tlH-g1-dlv"/>
@@ -525,13 +566,14 @@
                             <mask key="constraints">
                                 <exclude reference="9dH-Zb-EBE"/>
                                 <exclude reference="HHD-w5-i1A"/>
-                                <include reference="Tac-wY-gpe"/>
+                                <exclude reference="Tac-wY-gpe"/>
                                 <exclude reference="VQV-E2-axN"/>
                                 <include reference="XRk-n2-KFS"/>
+                                <include reference="XVW-vX-Z4d"/>
                                 <exclude reference="dvh-Lu-O5d"/>
                                 <exclude reference="ePd-5C-XJU"/>
                                 <exclude reference="fzf-Gf-I5G"/>
-                                <include reference="tlH-g1-dlv"/>
+                                <exclude reference="tlH-g1-dlv"/>
                                 <exclude reference="yxm-AP-wRZ"/>
                                 <exclude reference="CiD-rE-l2Y"/>
                                 <exclude reference="Di8-Gp-mbC"/>
@@ -560,6 +602,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vo8-9k-uQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1617" y="-340.5"/>
+        </scene>
+        <!--Manage Genres-->
+        <scene sceneID="6M5-rh-dMj">
+            <objects>
+                <tableViewController id="rpc-i3-EJv" customClass="ManageGenresTableViewController" customModule="My_Games_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="nvZ-9u-LtB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no genres. You can add new genres by tapping the + button." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p8T-vf-w8M">
+                            <rect key="frame" x="0.0" y="-21" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenreCell" textLabel="5pd-9H-wpD" style="IBUITableViewCellStyleDefault" id="o9Y-x7-vKx">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o9Y-x7-vKx" id="yc8-Dv-Yjm">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="First Person Shooter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5pd-9H-wpD">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rpc-i3-EJv" id="5KH-uz-ZcY"/>
+                            <outlet property="delegate" destination="rpc-i3-EJv" id="vA5-4n-IIx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Manage Genres" id="N6e-uW-dC4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nGw-0W-ZaF">
+                            <connections>
+                                <action selector="addAction:" destination="rpc-i3-EJv" id="ZrT-7s-b6p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="noGenresLabel" destination="p8T-vf-w8M" id="bVm-Ll-Wai"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktV-ac-SrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2407" y="-340"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dje-vc-7Nq">
@@ -614,6 +707,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0e-ar-haa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="21" y="-340"/>
+        </scene>
+        <!--Manage Platforms-->
+        <scene sceneID="S1h-3q-mMx">
+            <objects>
+                <tableViewController id="hrz-Ab-pY6" customClass="ManagePlatformsTableViewController" customModule="My_Games_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="MV7-IZ-LL8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no platforms. You can add new platforms by tapping the + button." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qcd-le-fkI">
+                            <rect key="frame" x="0.0" y="-21" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlatformCell" textLabel="Ydv-Os-8dY" style="IBUITableViewCellStyleDefault" id="Db3-6Z-9oV">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Db3-6Z-9oV" id="ls1-8i-53Q">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="PS4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ydv-Os-8dY">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hrz-Ab-pY6" id="Uuo-42-WTM"/>
+                            <outlet property="delegate" destination="hrz-Ab-pY6" id="oVi-hR-3ES"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Manage Platforms" id="ufZ-fH-6TY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="RZN-8n-bSU">
+                            <connections>
+                                <action selector="addAction:" destination="hrz-Ab-pY6" id="FF1-tb-DQr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="noPlatformLabel" destination="qcd-le-fkI" id="hlH-I3-ty4"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3xO-Au-DLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3168" y="-340"/>
         </scene>
     </scenes>
     <resources>
