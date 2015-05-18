@@ -295,7 +295,10 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="coF-Zk-BPb">
                                                     <rect key="frame" x="110" y="0.0" width="475" height="87"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="L3K-Ih-Utr" id="UYl-ZP-fWh"/>
+                                                    </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDw-UV-aov">
                                                     <rect key="frame" x="15" y="-1" width="87" height="87"/>
@@ -331,6 +334,9 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="L3K-Ih-Utr" id="qX7-Qc-I3M"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -351,6 +357,9 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="L3K-Ih-Utr" id="awm-71-3w3"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -414,6 +423,9 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="L3K-Ih-Utr" id="4t5-bM-NZb"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -433,6 +445,9 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="L3K-Ih-Utr" id="MO1-W4-rUH"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -487,6 +502,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addImageButton" destination="TDw-UV-aov" id="xd8-RW-HOw"/>
+                        <outlet property="buyTextField" destination="vtK-ds-vRr" id="4k3-e1-Ep7"/>
+                        <outlet property="descTextView" destination="CB5-3z-riV" id="MlS-uc-XZH"/>
+                        <outlet property="modesTextField" destination="g6i-1j-Y5N" id="aP5-bp-ZB7"/>
+                        <outlet property="publisherTextField" destination="s9t-oP-hly" id="Jkl-P3-Z2c"/>
+                        <outlet property="sourceTextField" destination="Ca5-MF-zzn" id="wKn-RE-Zd3"/>
+                        <outlet property="titleTextField" destination="coF-Zk-BPb" id="IfQ-9n-SDK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqC-17-LTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -511,7 +535,10 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Call of Duty: Advanced Warfare" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lC1-WV-eVM">
                                                     <rect key="frame" x="110" y="0.0" width="475" height="87"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="GZo-gI-5K8" id="Ygl-vm-EVm"/>
+                                                    </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvc-F0-eiQ">
                                                     <rect key="frame" x="15" y="-1" width="87" height="87"/>
@@ -547,6 +574,9 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="GZo-gI-5K8" id="WZ3-53-oUz"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -567,6 +597,9 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="GZo-gI-5K8" id="8aF-Dz-2XM"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -630,6 +663,9 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="GZo-gI-5K8" id="zLs-q6-GLr"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -649,6 +685,9 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="GZo-gI-5K8" id="SIH-Rf-8wk"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -704,6 +743,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addImageButton" destination="vvc-F0-eiQ" id="Jfn-hN-PQa"/>
+                        <outlet property="buyTextField" destination="OoK-NB-bfW" id="fGZ-hR-jaj"/>
+                        <outlet property="descTextView" destination="2HL-kQ-bCW" id="azI-pU-0Uo"/>
+                        <outlet property="modesTextField" destination="KEt-Q5-RCI" id="3az-BR-Nb9"/>
+                        <outlet property="publisherTextField" destination="ayf-ef-BPx" id="6Ep-Rf-l9n"/>
+                        <outlet property="sourceTextField" destination="QE8-Ad-MHV" id="kqu-yh-asw"/>
+                        <outlet property="titleTextField" destination="lC1-WV-eVM" id="sGA-FD-MkP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGW-G2-xip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -745,6 +793,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Pub-D7-pTE"/>
+                    <connections>
+                        <segue destination="z03-ue-5HT" kind="show" identifier="detailFromSearchSegue" id="Gpb-MD-x3c"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zdz-sU-5Yv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1134,7 +1185,7 @@ Full Sail University: http://fullsail.edu  </string>
         <!--Navigation Controller-->
         <scene sceneID="c2m-sE-S0V">
             <objects>
-                <navigationController storyboardIdentifier="settingsNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="partialCurl" id="U3c-OQ-ThI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="settingsNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="U3c-OQ-ThI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JhQ-1U-xBt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1421,4 +1472,7 @@ Full Sail University: http://fullsail.edu  </string>
         <image name="profile_picture" width="360" height="240"/>
         <image name="settings_icon" width="28" height="28"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Gpb-MD-x3c"/>
+    </inferredMetricsTieBreakers>
 </document>

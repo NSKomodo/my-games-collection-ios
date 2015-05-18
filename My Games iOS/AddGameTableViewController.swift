@@ -8,13 +8,29 @@
 
 import UIKit
 
-class AddGameTableViewController: UITableViewController {
+class AddGameTableViewController: UITableViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var addImageButton: UIButton!
+    
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var publisherTextField: UITextField!
+    @IBOutlet weak var modesTextField: UITextField!
+    
+    @IBOutlet weak var sourceTextField: UITextField!
+    @IBOutlet weak var buyTextField: UITextField!
+    
+    @IBOutlet weak var descTextView: UITextView!
+    
     weak var delegate: MasterTableViewController!
-    var firstResponder: AnyObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let singleTapRecognizer = UITapGestureRecognizer(target: self, action: "resignOnTap")
+        singleTapRecognizer.numberOfTapsRequired = 1
+        singleTapRecognizer.numberOfTapsRequired = 1
+        singleTapRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(singleTapRecognizer)
         
         clearsSelectionOnViewWillAppear = true
     }
@@ -24,7 +40,6 @@ class AddGameTableViewController: UITableViewController {
     }
     
     // MARK: Actions
-    
     @IBAction func cancelAction(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -32,5 +47,15 @@ class AddGameTableViewController: UITableViewController {
     @IBAction func saveAction(sender: AnyObject) {
         delegate.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // Methods:
+    func resignOnTap() {
+        view.endEditing(true)
+    }
+    
+    // Text field delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        return true
     }
 }
