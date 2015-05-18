@@ -23,6 +23,17 @@ class DetailTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: Actions
+    @IBAction func editAction(sender: AnyObject) {
+        performSegueWithIdentifier("editSegue", sender: self)
+    }
+    
+    // MARK: Methods
+    func reloadData() {
+        title = game.title
+        tableView.reloadData()
+    }
+    
     // MARK: Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 4
@@ -109,6 +120,14 @@ class DetailTableViewController: UITableViewController {
             }
         } else {
             return 44
+        }
+    }
+    
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editSegue" {
+            var editGameTableViewController = segue.destinationViewController.topViewController as! EditGameTableViewController
+            editGameTableViewController.delegate = self
         }
     }
 }

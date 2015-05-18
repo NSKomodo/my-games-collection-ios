@@ -38,6 +38,10 @@ class MasterTableViewController: UITableViewController, UISearchBarDelegate, UIS
         clearsSelectionOnViewWillAppear = true
         definesPresentationContext = true
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -170,6 +174,7 @@ class MasterTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     @IBAction func addAction(sender: AnyObject) {
+        performSegueWithIdentifier("addSegue", sender: self)
     }
     
 
@@ -244,8 +249,15 @@ class MasterTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var detailTableViewController = segue.destinationViewController as! DetailTableViewController
-        detailTableViewController.game = sender as! Game
+        if segue.identifier == "detailSegue" {
+            var detailTableViewController = segue.destinationViewController as! DetailTableViewController
+            detailTableViewController.game = sender as! Game
+        }
+        
+        if segue.identifier == "addSegue" {
+            var addGameTableViewController = segue.destinationViewController.topViewController as! AddGameTableViewController
+            addGameTableViewController.delegate = self
+        }
     }
     
 }
