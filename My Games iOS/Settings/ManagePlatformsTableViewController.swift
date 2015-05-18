@@ -126,7 +126,7 @@ class ManagePlatformsTableViewController: UITableViewController, UIAlertViewDele
     func alertViewShouldEnableFirstOtherButton(alertView: UIAlertView) -> Bool {
         let textField = alertView.textFieldAtIndex(0)
         
-        if (alertView.tag == 1000) {
+        if alertView.tag == 1000 {
             if textField!.text.isEmpty {
                 return false
             } else {

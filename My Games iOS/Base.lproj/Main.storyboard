@@ -312,7 +312,6 @@
         <!--Settings-->
         <scene sceneID="tT0-bC-Lkx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YUe-EQ-Bjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="X4U-rd-YvI" customClass="SettingsTableViewController" customModule="My_Games_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="jV8-0Y-FIs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -434,6 +433,7 @@
                         <segue destination="hrz-Ab-pY6" kind="show" identifier="managePlatformsSegue" id="vXw-El-55X"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUe-EQ-Bjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="823" y="-340"/>
         </scene>
@@ -449,6 +449,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_picture" translatesAutoresizingMaskIntoConstraints="NO" id="yRb-4G-1MP">
+                                <rect key="frame" x="0.0" y="64" width="600" height="399"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yRb-4G-1MP" secondAttribute="height" multiplier="320:213" id="8fy-Wv-J0C"/>
+                                    <constraint firstAttribute="width" secondItem="yRb-4G-1MP" secondAttribute="height" multiplier="361:240" id="dlK-f2-UYR"/>
+                                    <constraint firstAttribute="width" secondItem="yRb-4G-1MP" secondAttribute="height" multiplier="361:240" id="uUu-m1-V2n"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dlK-f2-UYR"/>
+                                        <exclude reference="uUu-m1-V2n"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="8fy-Wv-J0C"/>
+                                        <exclude reference="dlK-f2-UYR"/>
+                                        <include reference="uUu-m1-V2n"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lU8-Ej-GL0">
                                 <rect key="frame" x="0.0" y="471" width="600" height="119"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -490,31 +511,7 @@ Full Sail University: http://fullsail.edu  </string>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="369" y="64" width="231" height="336"/>
-                                </variation>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_picture" translatesAutoresizingMaskIntoConstraints="NO" id="yRb-4G-1MP">
-                                <rect key="frame" x="0.0" y="64" width="600" height="399"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="yRb-4G-1MP" secondAttribute="height" multiplier="320:213" id="8fy-Wv-J0C"/>
-                                    <constraint firstAttribute="width" secondItem="yRb-4G-1MP" secondAttribute="height" multiplier="361:240" id="dlK-f2-UYR"/>
-                                    <constraint firstAttribute="width" secondItem="yRb-4G-1MP" secondAttribute="height" multiplier="361:240" id="uUu-m1-V2n"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="dlK-f2-UYR"/>
-                                        <exclude reference="uUu-m1-V2n"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="8fy-Wv-J0C"/>
-                                        <exclude reference="dlK-f2-UYR"/>
-                                        <include reference="uUu-m1-V2n"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -534,6 +531,7 @@ Full Sail University: http://fullsail.edu  </string>
                             <constraint firstItem="yRb-4G-1MP" firstAttribute="leading" secondItem="xcY-t1-5qv" secondAttribute="leading" id="fzf-Gf-I5G"/>
                             <constraint firstItem="lU8-Ej-GL0" firstAttribute="leading" secondItem="yRb-4G-1MP" secondAttribute="trailing" constant="8" id="h3x-xM-Qxb"/>
                             <constraint firstItem="lU8-Ej-GL0" firstAttribute="top" secondItem="MGP-x9-taU" secondAttribute="bottom" id="hsq-ra-GjA"/>
+                            <constraint firstItem="lU8-Ej-GL0" firstAttribute="top" secondItem="MGP-x9-taU" secondAttribute="bottom" id="ie9-Qc-qjD"/>
                             <constraint firstItem="nbJ-r6-ybk" firstAttribute="top" secondItem="lU8-Ej-GL0" secondAttribute="bottom" id="leC-6X-Plv"/>
                             <constraint firstAttribute="trailing" secondItem="lU8-Ej-GL0" secondAttribute="trailing" id="qPS-pa-Jit"/>
                             <constraint firstItem="lU8-Ej-GL0" firstAttribute="leading" secondItem="yRb-4G-1MP" secondAttribute="trailing" constant="8" id="qwu-ga-LBF"/>
@@ -557,6 +555,7 @@ Full Sail University: http://fullsail.edu  </string>
                                 <exclude reference="O5T-Cd-uhp"/>
                                 <exclude reference="h3x-xM-Qxb"/>
                                 <exclude reference="hsq-ra-GjA"/>
+                                <exclude reference="ie9-Qc-qjD"/>
                                 <exclude reference="qwu-ga-LBF"/>
                                 <exclude reference="uP8-Fa-8ys"/>
                                 <exclude reference="leC-6X-Plv"/>
@@ -580,6 +579,7 @@ Full Sail University: http://fullsail.edu  </string>
                                 <exclude reference="KM8-uu-oDi"/>
                                 <exclude reference="O5T-Cd-uhp"/>
                                 <include reference="h3x-xM-Qxb"/>
+                                <include reference="ie9-Qc-qjD"/>
                                 <exclude reference="qPS-pa-Jit"/>
                                 <exclude reference="qwu-ga-LBF"/>
                                 <include reference="uP8-Fa-8ys"/>
