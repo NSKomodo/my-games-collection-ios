@@ -26,6 +26,7 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
     @IBOutlet weak var descTextView: UITextView!
 
     weak var delegate: DetailTableViewController!
+    var thumbnail: Thumbnail?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +71,10 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
 
     // MARK: Actions
     @IBAction func cancelAction(sender: AnyObject) {
+        if thumbnail != nil {
+            Thumbnail.remove(thumbnail!)
+        }
+        
         resignOnTap()
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -83,6 +88,10 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
         }
         
         var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        if thumbnail != nil {
+            delegate.game.thumbnail = thumbnail!
+        }
         
         delegate.game.title = titleTextField.text
         delegate.title = titleTextField.text
@@ -163,7 +172,7 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
         
         appDelegate.saveContext()
         
-        delegate.game.thumbnail = newThumbnail
+        thumbnail = newThumbnail
         
         appDelegate.saveContext()
         addImageButton.setImage(UIImage(data: newThumbnail.data), forState: UIControlState.Normal)

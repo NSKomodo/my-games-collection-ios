@@ -1,0 +1,113 @@
+//
+//  ManageThumbnailsCollectionViewController.swift
+//  My Games iOS
+//
+//  Created by Jorge Tapia on 5/19/15.
+//  Copyright (c) 2015 JORGETAPIA.NET. All rights reserved.
+//
+
+import UIKit
+import MobileCoreServices
+import CoreData
+
+class ManageThumbnailsCollectionViewController: UICollectionViewController, UIAlertViewDelegate {
+    
+    @IBOutlet weak var trashButton: UIBarButtonItem!
+    
+    var data = Thumbnail.allThumbnails() as! [Thumbnail]
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        trashButton.enabled = false
+        collectionView?.allowsMultipleSelection = true
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: Actions
+    @IBAction func trashAction(sender: AnyObject) {
+        var alert = UIAlertView(title: "My Games Collection", message: "This action deletes all the selected thumbnails and cannot be undone. Do you want to delete the selected thumbnails?", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Yes")
+        alert.show()
+    }
+    
+    // MARK: Methods
+    func reloadData() {
+        data = Thumbnail.allThumbnails() as! [Thumbnail]
+        
+        collectionView?.performBatchUpdates({ () -> Void in
+            collectionView?.reloadSections(NSIndexSet(index: 0))
+        }, completion: { (completed: Bool) -> Void in
+            collectionView?.reloadData()
+        })
+        
+        if data.count == 0 {
+            trashButton.enabled = false
+        }
+    }
+    
+    // Collection view data source
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let thumbnail = data[indexPath.row]
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ThumbnailCell", forIndexPath: indexPath) as! UICollectionViewCell
+        
+        let imageView = cell.viewWithTag(1) as! UIImageView
+        imageView.image = UIImage(data: thumbnail.data)
+        
+        return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        
+        var selectionImage = cell?.viewWithTag(2) as! UIImageView
+        selectionImage.hidden = false
+        
+        trashButton.enabled = true
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        
+        var selectionImage = cell?.viewWithTag(2) as! UIImageView
+        selectionImage.hidden = true
+        
+        if collectionView.indexPathsForSelectedItems().count == 0 {
+            trashButton.enabled = false
+        }
+    }
+    
+    // Alert view delegate
+    func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
+        if buttonIndex != alertView.cancelButtonIndex {
+            var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            let selectedIndexPaths = collectionView?.indexPathsForSelectedItems() as! [NSIndexPath]
+            
+            for game in Game.allGames() as! [Game] {
+                game.thumbnail = Thumbnail.thumbnailWithTitle("default_image")!
+            }
+            
+            appDelegate.saveContext()
+            
+            for indexPath in selectedIndexPaths {
+                Thumbnail.remove(data[indexPath.row])
+            }
+            
+            trashButton.enabled = false
+            
+            reloadData()
+        }
+    }
+}

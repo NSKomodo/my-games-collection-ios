@@ -487,7 +487,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection id="OEk-hS-64x">
+                            <tableViewSection headerTitle="Edit Image" id="OEk-hS-64x">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="88" id="zhk-qc-ALa">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -806,6 +806,20 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="JEX-Ck-ShL" style="IBUITableViewCellStyleDefault" id="yNx-qv-MJP">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yNx-qv-MJP" id="Xuh-m7-2az">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Manage Thumbnails" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JEX-Ck-ShL">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="Scr-St-vit">
@@ -867,6 +881,7 @@
                         <segue destination="XoT-Co-QoI" kind="show" identifier="aboutSegue" id="lAi-kd-egR"/>
                         <segue destination="rpc-i3-EJv" kind="show" identifier="manageGenresSegue" id="CsZ-IL-7Vp"/>
                         <segue destination="hrz-Ab-pY6" kind="show" identifier="managePlatformsSegue" id="vXw-El-55X"/>
+                        <segue destination="D0U-mj-7ac" kind="show" identifier="manageThumbnailsSegue" id="Elr-mU-KCn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUe-EQ-Bjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1391,6 +1406,59 @@ Full Sail University: http://fullsail.edu  </string>
             </objects>
             <point key="canvasLocation" x="2407" y="402"/>
         </scene>
+        <!--Manage Thumbnails-->
+        <scene sceneID="dYU-CT-E07">
+            <objects>
+                <collectionViewController id="D0U-mj-7ac" customClass="ManageThumbnailsCollectionViewController" customModule="My_Games_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="U2r-5W-JsV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EPX-0a-RBW">
+                            <size key="itemSize" width="66" height="66"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ThumbnailCell" id="D9T-Nl-wkO">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Call of Duty: Advanced Warfare" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-on-tMx">
+                                            <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                                        </imageView>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check_selection" translatesAutoresizingMaskIntoConstraints="NO" id="Ynu-HK-7VN">
+                                            <rect key="frame" x="36" y="36" width="30" height="30"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="D0U-mj-7ac" id="8F6-0B-e76"/>
+                            <outlet property="delegate" destination="D0U-mj-7ac" id="H5e-XG-OOj"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Manage Thumbnails" id="PoK-2c-yWD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="AfS-C4-2PP">
+                            <connections>
+                                <action selector="trashAction:" destination="D0U-mj-7ac" id="6z1-rJ-Xue"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="trashButton" destination="AfS-C4-2PP" id="wEk-C1-9fT"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4zQ-hh-H2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4035" y="-340"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="IsB-Dp-HJU">
             <objects>
@@ -1413,6 +1481,7 @@ Full Sail University: http://fullsail.edu  </string>
     <resources>
         <image name="Call of Duty: Advanced Warfare" width="140" height="140"/>
         <image name="add_image" width="86" height="86"/>
+        <image name="check_selection" width="33" height="33"/>
         <image name="profile_picture" width="360" height="240"/>
         <image name="settings_icon" width="28" height="28"/>
     </resources>

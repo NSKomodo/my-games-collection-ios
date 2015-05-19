@@ -224,6 +224,11 @@ class MasterTableViewController: UITableViewController, UISearchBarDelegate, UIS
             var game = Game.allGames(genre: genre)![indexPath.row] as! Game
             
             Game.remove(game)
+            
+            /*if genre.games.count == 0 {
+                Genre.remove(genre)
+            }*/
+            
             reloadData()
         }
     }

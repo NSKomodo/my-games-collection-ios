@@ -102,6 +102,10 @@ class ManagePlatformsTableViewController: UITableViewController, UIAlertViewDele
         var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var textField = alertView.textFieldAtIndex(0)
         
+        if textField!.text.isEmpty {
+            return
+        }
+        
         if alertView.tag == 1000 {
             if buttonIndex != alertView.cancelButtonIndex {
                 var newPlatform = Platform.createNew(textField!.text)

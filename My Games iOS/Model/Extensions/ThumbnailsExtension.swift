@@ -68,6 +68,9 @@ extension Thumbnail {
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
+        let predicate = NSPredicate(format: "title != %@", "default_image")
+        fetchRequest.predicate = predicate
+        
         var error: NSError? = nil
         var thumbnails = managedObjectContext?.executeFetchRequest(fetchRequest, error: &error)
         if error != nil {
@@ -94,6 +97,10 @@ extension Thumbnail {
         let items = allThumbnails()
         
         for thumbnail in items! {
+            if (thumbnail as! Thumbnail).title == "default_image" {
+                continue
+            }
+            
             managedObjectContext?.deleteObject(thumbnail as! NSManagedObject)
         }
         
