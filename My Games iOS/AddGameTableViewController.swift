@@ -136,8 +136,8 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
         actionSheet.cancelButtonIndex = 0
         actionSheet.addButtonWithTitle("Cancel")
         actionSheet.addButtonWithTitle("Take Photo")
-        actionSheet.addButtonWithTitle("Choose From Photo Library")
-        actionSheet.addButtonWithTitle("Choose Existing Thumbnail")
+        actionSheet.addButtonWithTitle("From Photo Library")
+        actionSheet.addButtonWithTitle("Existing Thumbnail")
         actionSheet.showInView(self.view)
     }
     
@@ -154,6 +154,13 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
     // Action sheet delegate
     func actionSheet(actionSheet: UIActionSheet, didDismissWithButtonIndex buttonIndex: Int) {
         if buttonIndex == 1 {
+            // Simulator handler
+            if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+                UIAlertView(title: "My Game Collection", message: "It is not possible to take photos using the iOS Simulator.", delegate: nil, cancelButtonTitle: "Dismiss").show()
+                
+                return
+            }
+            
             // Take Photo
             let imagePickerController = UIImagePickerController()
             
