@@ -30,7 +30,6 @@ class DetailTableViewController: UITableViewController {
     
     // MARK: Methods
     func reloadData() {
-        title = game.title
         tableView.reloadData()
     }
     
@@ -45,7 +44,7 @@ class DetailTableViewController: UITableViewController {
         } else if section == 1 {
             return 3
         } else if section == 2 {
-            return 2
+            return 1
         } else {
             return 1
         }
@@ -58,9 +57,9 @@ class DetailTableViewController: UITableViewController {
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             
             cell.detailTextLabel?.numberOfLines = 0
-            cell.detailTextLabel?.text = game.modes
+            cell.detailTextLabel?.text = !game.modes.isEmpty ? game.modes : "N/A"
             
-            cell.imageView?.image = UIImage(named: game.thumbnail.title)
+            cell.imageView?.image = game.thumbnail.title.isEmpty ? UIImage(named: "default_image") : UIImage(data: game.thumbnail.data)
         } else if indexPath.section == 1 {
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             
@@ -76,9 +75,6 @@ class DetailTableViewController: UITableViewController {
             }
         } else if indexPath.section == 2 {
             if indexPath.row == 0 {
-                cell.textLabel?.text = "Image Source"
-                cell.detailTextLabel?.text = !game.source.isEmpty ? game.source : "N/A"
-            } else if indexPath.row == 1 {
                 cell.textLabel?.text = "Buy Link"
                 cell.detailTextLabel?.text = !game.buy.isEmpty ? game.buy : "N/A"
             }
@@ -95,9 +91,6 @@ class DetailTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 2 {
             if indexPath.row == 0 {
-                UIApplication.sharedApplication().openURL(NSURL(string: game.source)!)
-                tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            } else {
                 UIApplication.sharedApplication().openURL(NSURL(string: game.buy)!)
                 tableView.deselectRowAtIndexPath(indexPath, animated: true)
             }

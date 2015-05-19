@@ -10,8 +10,8 @@ import UIKit
 import CoreData
 
 extension Thumbnail {
-
-    class func thumbnailsWithTitle(title: String) -> Thumbnail? {
+    
+    class func thumbnailWithTitle(title: String) -> Thumbnail? {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedObjectContext = appDelegate.managedObjectContext
@@ -21,6 +21,29 @@ extension Thumbnail {
         fetchRequest.entity = entity
         
         let predicate = NSPredicate(format: "title == %@", title)
+        fetchRequest.predicate = predicate
+        
+        var error: NSError? = nil
+        var thumbnails: Thumbnail? = managedObjectContext?.executeFetchRequest(fetchRequest, error: &error)?.last as! Thumbnail?
+        
+        if error != nil {
+            NSLog("Unresolved error \(error), \(error?.userInfo)")
+            abort()
+        }
+        
+        return thumbnails
+    }
+
+    class func thumbnailForGame(game: Game) -> Thumbnail? {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedObjectContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest()
+        
+        var entity = NSEntityDescription.entityForName("Thumbnail", inManagedObjectContext: managedObjectContext!)
+        fetchRequest.entity = entity
+        
+        let predicate = NSPredicate(format: "ANY games == %@", game)
         fetchRequest.predicate = predicate
         
         var error: NSError? = nil

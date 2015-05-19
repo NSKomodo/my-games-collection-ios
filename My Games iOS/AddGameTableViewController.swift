@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import MobileCoreServices
+import CoreData
 
-class AddGameTableViewController: UITableViewController, UITextFieldDelegate {
+class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var addImageButton: UIButton!
     
@@ -16,12 +18,15 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var publisherTextField: UITextField!
     @IBOutlet weak var modesTextField: UITextField!
     
-    @IBOutlet weak var sourceTextField: UITextField!
+    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var platformLabel: UILabel!
+    
     @IBOutlet weak var buyTextField: UITextField!
     
     @IBOutlet weak var descTextView: UITextView!
     
     weak var delegate: MasterTableViewController!
+    var thumbnail: Thumbnail?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +38,9 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate {
         view.addGestureRecognizer(singleTapRecognizer)
         
         clearsSelectionOnViewWillAppear = true
+        
+        titleTextField.becomeFirstResponder()
+        addImageButton.accessibilityIdentifier = "add_image"
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,12 +49,96 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: Actions
     @IBAction func cancelAction(sender: AnyObject) {
+        if thumbnail != nil {
+            Thumbnail.remove(thumbnail!)
+        }
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func saveAction(sender: AnyObject) {
+        if titleTextField.text.isEmpty {
+            titleTextField.becomeFirstResponder()
+            titleTextField.placeholder = "Title is required"
+            
+            return
+        }
+        
+        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedObjectContext = appDelegate.managedObjectContext
+        
+        var gameEntity = NSEntityDescription.entityForName("Game", inManagedObjectContext: managedObjectContext!)
+        var newGame = Game(entity: gameEntity!, insertIntoManagedObjectContext: managedObjectContext)
+        
+        if addImageButton.accessibilityIdentifier == "add_image" {
+            var defaultThumbnail = Thumbnail.thumbnailWithTitle("default_image")
+            
+            if defaultThumbnail != nil {
+                newGame.thumbnail = defaultThumbnail!
+            } else {
+                let defaultImageData = UIImagePNGRepresentation(UIImage(named: "default_image"))
+                
+                var thumbnailEntity = NSEntityDescription.entityForName("Thumbnail", inManagedObjectContext: managedObjectContext!)
+                defaultThumbnail = Thumbnail(entity: thumbnailEntity!, insertIntoManagedObjectContext: managedObjectContext)
+                defaultThumbnail?.title = "default_image"
+                defaultThumbnail?.data = defaultImageData
+                
+                appDelegate.saveContext()
+            }
+            
+            newGame.thumbnail = defaultThumbnail!
+        } else {
+            newGame.thumbnail = thumbnail!
+        }
+        
+        // Verify if genres exist, if not, creates a default
+        var defaultGenre = Genre.genreWithTitle("No Genre")
+        
+        if defaultGenre == nil {
+            var genreEntity = NSEntityDescription.entityForName("Genre", inManagedObjectContext: managedObjectContext!)
+            defaultGenre = Genre(entity: genreEntity!, insertIntoManagedObjectContext: managedObjectContext)
+            defaultGenre?.title = "No Genre"
+            
+            appDelegate.saveContext()
+        }
+        
+        // Verify if platform exist, if not, creates a default
+        var defaultPlatform = Platform.platformWithTitle("No Platform")
+        
+        if defaultPlatform == nil {
+            var platformEntity = NSEntityDescription.entityForName("Platform", inManagedObjectContext: managedObjectContext!)
+            defaultPlatform = Platform(entity: platformEntity!, insertIntoManagedObjectContext: managedObjectContext)
+            defaultPlatform?.title = "No Platform"
+            
+            appDelegate.saveContext()
+        }
+        
+        newGame.title = titleTextField.text
+        newGame.publisher = publisherTextField.text
+        newGame.modes = modesTextField.text
+        
+        newGame.genre = defaultGenre!
+        newGame.platform = defaultPlatform!
+        
+        newGame.buy = buyTextField.text
+        
+        newGame.desc = descTextView.text
+        
+        appDelegate.saveContext()
         delegate.reloadData()
+        
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func addImageAction(sender: AnyObject) {
+        var actionSheet: UIActionSheet = UIActionSheet()
+        actionSheet.delegate = self
+        actionSheet.cancelButtonIndex = 0
+        actionSheet.addButtonWithTitle("Cancel")
+        actionSheet.addButtonWithTitle("Take Photo")
+        actionSheet.addButtonWithTitle("Choose From Photo Library")
+        actionSheet.addButtonWithTitle("Choose Existing Thumbnail")
+        actionSheet.showInView(self.view)
     }
     
     // Methods:
@@ -57,5 +149,63 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate {
     // Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         return true
+    }
+    
+    // Action sheet delegate
+    func actionSheet(actionSheet: UIActionSheet, didDismissWithButtonIndex buttonIndex: Int) {
+        if buttonIndex == 1 {
+            // Take Photo
+            let imagePickerController = UIImagePickerController()
+            
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
+            imagePickerController.mediaTypes = [kUTTypeImage]
+            imagePickerController.allowsEditing = true
+            
+            self.presentViewController(imagePickerController, animated: true, completion: nil)
+        } else if buttonIndex == 2 {
+            // Choose Photo
+            let imagePickerController = UIImagePickerController()
+            
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePickerController.mediaTypes = [kUTTypeImage]
+            imagePickerController.allowsEditing = true
+            
+            self.presentViewController(imagePickerController, animated: true, completion: nil)
+        } else if buttonIndex == 3 {
+            UIAlertView(title: "My Game Collection", message: "TODO: Choose Existing Thumbnail", delegate: nil, cancelButtonTitle: "Dismiss").show()
+        }
+    }
+    
+    // Image picker controller delegate
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        if thumbnail != nil {
+            Thumbnail.remove(thumbnail!)
+        }
+        
+        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        var managedObjectContext = appDelegate.managedObjectContext
+        
+        var photoTaken = info[UIImagePickerControllerEditedImage] != nil ? info[UIImagePickerControllerEditedImage] as! UIImage : info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        var thumbnailEntity = NSEntityDescription.entityForName("Thumbnail", inManagedObjectContext: managedObjectContext!)
+        
+        var newThumbnail = Thumbnail(entity: thumbnailEntity!, insertIntoManagedObjectContext: managedObjectContext!)
+        
+        let thumbnailTitle = "new_game_\((Thumbnail.allThumbnails()?.count)! + 1)"
+        
+        newThumbnail.title = thumbnailTitle
+        newThumbnail.data = UIImagePNGRepresentation(photoTaken)
+        
+        appDelegate.saveContext()
+        
+        thumbnail = newThumbnail
+        
+        addImageButton.accessibilityIdentifier = thumbnailTitle
+        addImageButton.setImage(UIImage(data: newThumbnail.data), forState: UIControlState.Normal)
+        addImageButton.accessibilityIdentifier = thumbnailTitle
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }

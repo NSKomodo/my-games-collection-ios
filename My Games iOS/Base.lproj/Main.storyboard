@@ -192,26 +192,6 @@
                             </tableViewSection>
                             <tableViewSection id="bww-0N-yyk">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="kKh-2P-j3U" detailTextLabel="hcB-MM-9Ap" style="IBUITableViewCellStyleValue1" id="fw5-9v-fwa">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fw5-9v-fwa" id="ClU-ek-SWw">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Image Source" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kKh-2P-j3U">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="https://lh3.googleusercontent.com/-NtZgbyJwKJA/AAAAAAAAAAI/AAAAAAAAANw/c0RShpXgaaU/photo.jpg" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hcB-MM-9Ap">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="K6e-Sc-cHU" detailTextLabel="TYH-Iv-V3R" style="IBUITableViewCellStyleValue1" id="F7h-1r-ZMa">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F7h-1r-ZMa" id="st4-d2-lNB">
@@ -292,8 +272,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ArV-SN-EKZ" id="RSp-T1-Kf5">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="coF-Zk-BPb">
-                                                    <rect key="frame" x="110" y="0.0" width="475" height="87"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="coF-Zk-BPb">
+                                                    <rect key="frame" x="111" y="0.0" width="474" height="87"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -301,20 +281,23 @@
                                                     </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDw-UV-aov">
-                                                    <rect key="frame" x="15" y="-1" width="87" height="87"/>
+                                                    <rect key="frame" x="15" y="0.0" width="88" height="88"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="87" id="7Zy-Sm-wQo"/>
-                                                        <constraint firstAttribute="height" constant="87" id="uay-ub-hft"/>
+                                                        <constraint firstAttribute="width" constant="88" id="7Zy-Sm-wQo"/>
+                                                        <constraint firstAttribute="height" constant="88" id="uay-ub-hft"/>
                                                     </constraints>
                                                     <state key="normal" image="add_image">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addImageAction:" destination="L3K-Ih-Utr" eventType="touchUpInside" id="51b-xe-LiN"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="TDw-UV-aov" firstAttribute="leading" secondItem="RSp-T1-Kf5" secondAttribute="leading" constant="15" id="Bzc-go-Jyp"/>
                                                 <constraint firstItem="coF-Zk-BPb" firstAttribute="leading" secondItem="TDw-UV-aov" secondAttribute="trailing" constant="8" id="lsc-UJ-nBW"/>
-                                                <constraint firstItem="TDw-UV-aov" firstAttribute="top" secondItem="RSp-T1-Kf5" secondAttribute="topMargin" constant="-9" id="rhh-nf-LJq"/>
+                                                <constraint firstItem="TDw-UV-aov" firstAttribute="top" secondItem="RSp-T1-Kf5" secondAttribute="top" id="rhh-nf-LJq"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="coF-Zk-BPb" secondAttribute="bottom" constant="-8" id="xfq-YK-D60"/>
                                                 <constraint firstItem="coF-Zk-BPb" firstAttribute="top" secondItem="RSp-T1-Kf5" secondAttribute="topMargin" constant="-8" id="yM5-r7-Cyc"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="coF-Zk-BPb" secondAttribute="trailing" constant="7" id="z9W-2U-DFL"/>
@@ -414,34 +397,12 @@
                             </tableViewSection>
                             <tableViewSection id="jR9-Hy-oCO">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="gOm-ol-J1H">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gOm-ol-J1H" id="zX6-63-det">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Image Source" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ca5-MF-zzn">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="L3K-Ih-Utr" id="4t5-bM-NZb"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Ca5-MF-zzn" secondAttribute="bottom" constant="-8" id="8qy-md-zFv"/>
-                                                <constraint firstItem="Ca5-MF-zzn" firstAttribute="leading" secondItem="zX6-63-det" secondAttribute="leading" constant="15" id="C3d-Mw-Etn"/>
-                                                <constraint firstItem="Ca5-MF-zzn" firstAttribute="top" secondItem="zX6-63-det" secondAttribute="topMargin" constant="-8" id="rDQ-Rl-HTd"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ca5-MF-zzn" secondAttribute="trailing" constant="15" id="uy4-iW-vsU"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="8fB-Da-SwX">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8fB-Da-SwX" id="3Ek-8D-Rjj">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Buy Link" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vtK-ds-vRr">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Buy Link" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vtK-ds-vRr">
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -506,9 +467,10 @@
                         <outlet property="addImageButton" destination="TDw-UV-aov" id="xd8-RW-HOw"/>
                         <outlet property="buyTextField" destination="vtK-ds-vRr" id="4k3-e1-Ep7"/>
                         <outlet property="descTextView" destination="CB5-3z-riV" id="MlS-uc-XZH"/>
+                        <outlet property="genreLabel" destination="tuG-KV-h59" id="LmJ-gK-mZL"/>
                         <outlet property="modesTextField" destination="g6i-1j-Y5N" id="aP5-bp-ZB7"/>
+                        <outlet property="platformLabel" destination="whh-eR-QsQ" id="bYv-mT-Bkb"/>
                         <outlet property="publisherTextField" destination="s9t-oP-hly" id="Jkl-P3-Z2c"/>
-                        <outlet property="sourceTextField" destination="Ca5-MF-zzn" id="wKn-RE-Zd3"/>
                         <outlet property="titleTextField" destination="coF-Zk-BPb" id="IfQ-9n-SDK"/>
                     </connections>
                 </tableViewController>
@@ -532,8 +494,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zhk-qc-ALa" id="3M7-sw-ukW">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Call of Duty: Advanced Warfare" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lC1-WV-eVM">
-                                                    <rect key="frame" x="110" y="0.0" width="475" height="87"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Call of Duty: Advanced Warfare" placeholder="Title" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lC1-WV-eVM">
+                                                    <rect key="frame" x="111" y="0.0" width="474" height="87"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -541,20 +503,23 @@
                                                     </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvc-F0-eiQ">
-                                                    <rect key="frame" x="15" y="-1" width="87" height="87"/>
+                                                    <rect key="frame" x="15" y="0.0" width="88" height="88"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="87" id="s4Y-I2-aJ4"/>
-                                                        <constraint firstAttribute="height" constant="87" id="yaE-wk-hGB"/>
+                                                        <constraint firstAttribute="width" constant="88" id="s4Y-I2-aJ4"/>
+                                                        <constraint firstAttribute="height" constant="88" id="yaE-wk-hGB"/>
                                                     </constraints>
                                                     <state key="normal" image="Call of Duty: Advanced Warfare">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="pickImageAction:" destination="GZo-gI-5K8" eventType="touchUpInside" id="UVd-pT-ZA2"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="lC1-WV-eVM" firstAttribute="top" secondItem="3M7-sw-ukW" secondAttribute="topMargin" constant="-8" id="92T-6d-DYX"/>
                                                 <constraint firstItem="vvc-F0-eiQ" firstAttribute="leading" secondItem="3M7-sw-ukW" secondAttribute="leading" constant="15" id="C1Q-AF-sW2"/>
-                                                <constraint firstItem="vvc-F0-eiQ" firstAttribute="top" secondItem="3M7-sw-ukW" secondAttribute="topMargin" constant="-9" id="Slw-gp-faI"/>
+                                                <constraint firstItem="vvc-F0-eiQ" firstAttribute="top" secondItem="3M7-sw-ukW" secondAttribute="top" id="Slw-gp-faI"/>
                                                 <constraint firstItem="lC1-WV-eVM" firstAttribute="leading" secondItem="vvc-F0-eiQ" secondAttribute="trailing" constant="8" id="UdH-ta-tnU"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="lC1-WV-eVM" secondAttribute="trailing" constant="7" id="V0S-yp-VBz"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="lC1-WV-eVM" secondAttribute="bottom" constant="-8" id="eR9-YR-Tyj"/>
@@ -654,34 +619,12 @@
                             </tableViewSection>
                             <tableViewSection id="YeZ-Uf-ZWl">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="9Fq-mr-cj5">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Fq-mr-cj5" id="LRz-Jq-vQ5">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://lh3.googleusercontent.com/-NtZgbyJwKJA/AAAAAAAAAAI/AAAAAAAAANw/c0RShpXgaaU/photo.jpg" placeholder="Image Source" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QE8-Ad-MHV">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="GZo-gI-5K8" id="zLs-q6-GLr"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="QE8-Ad-MHV" secondAttribute="bottom" constant="-8" id="5xK-ew-1gp"/>
-                                                <constraint firstAttribute="trailing" secondItem="QE8-Ad-MHV" secondAttribute="trailing" constant="15" id="GrI-BQ-4VQ"/>
-                                                <constraint firstItem="QE8-Ad-MHV" firstAttribute="leading" secondItem="LRz-Jq-vQ5" secondAttribute="leading" constant="15" id="SXo-gw-Oon"/>
-                                                <constraint firstItem="QE8-Ad-MHV" firstAttribute="top" secondItem="LRz-Jq-vQ5" secondAttribute="topMargin" constant="-8" id="yTj-k4-yf6"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Os6-lo-4bB">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Os6-lo-4bB" id="jXQ-gd-t23">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://www.gamestop.com/xbox-one/games/call-of-duty-advanced-warfare/114916" placeholder="Buy Link" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OoK-NB-bfW">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://www.gamestop.com/xbox-one/games/call-of-duty-advanced-warfare/114916" placeholder="Buy Link" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OoK-NB-bfW">
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -747,9 +690,10 @@
                         <outlet property="addImageButton" destination="vvc-F0-eiQ" id="Jfn-hN-PQa"/>
                         <outlet property="buyTextField" destination="OoK-NB-bfW" id="fGZ-hR-jaj"/>
                         <outlet property="descTextView" destination="2HL-kQ-bCW" id="azI-pU-0Uo"/>
+                        <outlet property="genreLabel" destination="A2B-Uc-AD5" id="nKi-Wh-mzK"/>
                         <outlet property="modesTextField" destination="KEt-Q5-RCI" id="3az-BR-Nb9"/>
+                        <outlet property="platformLabel" destination="uSo-Au-knN" id="J0n-IH-vbx"/>
                         <outlet property="publisherTextField" destination="ayf-ef-BPx" id="6Ep-Rf-l9n"/>
-                        <outlet property="sourceTextField" destination="QE8-Ad-MHV" id="kqu-yh-asw"/>
                         <outlet property="titleTextField" destination="lC1-WV-eVM" id="sGA-FD-MkP"/>
                     </connections>
                 </tableViewController>

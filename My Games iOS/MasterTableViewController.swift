@@ -39,7 +39,10 @@ class MasterTableViewController: UITableViewController, UISearchBarDelegate, UIS
         definesPresentationContext = true
     }
     
+    
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         reloadData()
     }
 
@@ -131,8 +134,8 @@ class MasterTableViewController: UITableViewController, UISearchBarDelegate, UIS
             for thumbnail in allThumbnailsSet {
                 let thumbnailEntity = NSEntityDescription.entityForName("Thumbnail", inManagedObjectContext: managedObjectContext!)
                 var newthumbnail = Thumbnail(entity: thumbnailEntity!, insertIntoManagedObjectContext: managedObjectContext)
-                
                 newthumbnail.title = thumbnail
+                newthumbnail.data = UIImagePNGRepresentation(UIImage(named: thumbnail))
             }
             
             appDelegate.saveContext()
@@ -148,12 +151,11 @@ class MasterTableViewController: UITableViewController, UISearchBarDelegate, UIS
                 newGame.desc = game["description"]!
                 newGame.publisher = game["publisher"]!
                 newGame.buy = game["buy"]!
-                newGame.source = game["source"]!
                 newGame.modes = game["modes"]!
                 
                 newGame.genre = Genre.genreWithTitle(game["genre"]!)!
                 newGame.platform = Platform.platformWithTitle(game["platform"]!)!
-                newGame.thumbnail = Thumbnail.thumbnailsWithTitle(game["thumbnail"]!)!
+                newGame.thumbnail = Thumbnail.thumbnailWithTitle(game["thumbnail"]!)!
             }
             
             appDelegate.saveContext()
@@ -202,7 +204,7 @@ class MasterTableViewController: UITableViewController, UISearchBarDelegate, UIS
         platformLabel.text = game.platform.title
         
         var imageView = cell.viewWithTag(3) as! UIImageView
-        imageView.image = UIImage(named: game.thumbnail.title)
+        imageView.image = UIImage(data: game.thumbnail.data)
         
         return cell
     }

@@ -26,12 +26,12 @@
 		6CC858A91B092F8300531C6A /* ManageGenresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC858A81B092F8300531C6A /* ManageGenresTableViewController.swift */; };
 		6CC858AB1B092FAB00531C6A /* ManagePlatformsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC858AA1B092FAB00531C6A /* ManagePlatformsTableViewController.swift */; };
 		6CE9C6CC1B07B4C700CF7645 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9C6CB1B07B4C700CF7645 /* DetailTableViewController.swift */; };
-		6CE9C6CE1B07CE9D00CF7645 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9C6CD1B07CE9D00CF7645 /* Genre.swift */; };
-		6CE9C6D01B07CE9D00CF7645 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9C6CF1B07CE9D00CF7645 /* Platform.swift */; };
-		6CE9C6D21B07CE9D00CF7645 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9C6D11B07CE9D00CF7645 /* Thumbnail.swift */; };
-		6CE9C6D41B07CE9D00CF7645 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9C6D31B07CE9D00CF7645 /* Game.swift */; };
 		6CF0675F1B0A654400DD420D /* AddGameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0675E1B0A654400DD420D /* AddGameTableViewController.swift */; };
 		6CF067611B0A776800DD420D /* EditGameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF067601B0A776800DD420D /* EditGameTableViewController.swift */; };
+		6CF0677B1B0B838B00DD420D /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0677A1B0B838B00DD420D /* Platform.swift */; };
+		6CF0677D1B0B838B00DD420D /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0677C1B0B838B00DD420D /* Genre.swift */; };
+		6CF0677F1B0B838B00DD420D /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0677E1B0B838B00DD420D /* Thumbnail.swift */; };
+		6CF067811B0B838B00DD420D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF067801B0B838B00DD420D /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,12 +67,12 @@
 		6CC858A81B092F8300531C6A /* ManageGenresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageGenresTableViewController.swift; sourceTree = "<group>"; };
 		6CC858AA1B092FAB00531C6A /* ManagePlatformsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagePlatformsTableViewController.swift; sourceTree = "<group>"; };
 		6CE9C6CB1B07B4C700CF7645 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
-		6CE9C6CD1B07CE9D00CF7645 /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
-		6CE9C6CF1B07CE9D00CF7645 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
-		6CE9C6D11B07CE9D00CF7645 /* Thumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
-		6CE9C6D31B07CE9D00CF7645 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		6CF0675E1B0A654400DD420D /* AddGameTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGameTableViewController.swift; sourceTree = "<group>"; };
 		6CF067601B0A776800DD420D /* EditGameTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGameTableViewController.swift; sourceTree = "<group>"; };
+		6CF0677A1B0B838B00DD420D /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		6CF0677C1B0B838B00DD420D /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		6CF0677E1B0B838B00DD420D /* Thumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
+		6CF067801B0B838B00DD420D /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		AE1704E7F6BC17E7D3247736 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E60120CDFAF87D6F6FE8F30D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F1B982487CD4A0CD3AD15245 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,10 +109,10 @@
 			isa = PBXGroup;
 			children = (
 				6C7AB0B91B06D8BD0095482E /* Extensions */,
-				6CE9C6D31B07CE9D00CF7645 /* Game.swift */,
-				6CE9C6D11B07CE9D00CF7645 /* Thumbnail.swift */,
-				6CE9C6CF1B07CE9D00CF7645 /* Platform.swift */,
-				6CE9C6CD1B07CE9D00CF7645 /* Genre.swift */,
+				6CF067801B0B838B00DD420D /* Game.swift */,
+				6CF0677E1B0B838B00DD420D /* Thumbnail.swift */,
+				6CF0677C1B0B838B00DD420D /* Genre.swift */,
+				6CF0677A1B0B838B00DD420D /* Platform.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,22 +375,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CF0675F1B0A654400DD420D /* AddGameTableViewController.swift in Sources */,
-				6CE9C6D01B07CE9D00CF7645 /* Platform.swift in Sources */,
-				6CE9C6D41B07CE9D00CF7645 /* Game.swift in Sources */,
 				6C7AB0CC1B07160F0095482E /* SettingsTableViewController.swift in Sources */,
 				6C9680571B05497400D5FC74 /* MasterTableViewController.swift in Sources */,
+				6CF0677B1B0B838B00DD420D /* Platform.swift in Sources */,
 				6CC858A91B092F8300531C6A /* ManageGenresTableViewController.swift in Sources */,
 				6C9680551B05497400D5FC74 /* AppDelegate.swift in Sources */,
 				6C7AB0AA1B05880A0095482E /* SearchResultsTableViewController.swift in Sources */,
+				6CF0677D1B0B838B00DD420D /* Genre.swift in Sources */,
 				6C7AB0BF1B06DC020095482E /* PlatformExtension.swift in Sources */,
 				6C7AB0C11B06DC2F0095482E /* GenreExtension.swift in Sources */,
-				6CE9C6D21B07CE9D00CF7645 /* Thumbnail.swift in Sources */,
 				6CC858AB1B092FAB00531C6A /* ManagePlatformsTableViewController.swift in Sources */,
 				6C7AB0BB1B06D8F50095482E /* GameExtension.swift in Sources */,
-				6CE9C6CE1B07CE9D00CF7645 /* Genre.swift in Sources */,
 				6C7AB0CF1B0732E60095482E /* AboutViewController.swift in Sources */,
 				6C7AB0AF1B06B8B60095482E /* Model.xcdatamodeld in Sources */,
+				6CF067811B0B838B00DD420D /* Game.swift in Sources */,
 				6CE9C6CC1B07B4C700CF7645 /* DetailTableViewController.swift in Sources */,
+				6CF0677F1B0B838B00DD420D /* Thumbnail.swift in Sources */,
 				6C7AB0BD1B06DBDE0095482E /* ThumbnailsExtension.swift in Sources */,
 				6CF067611B0A776800DD420D /* EditGameTableViewController.swift in Sources */,
 			);
