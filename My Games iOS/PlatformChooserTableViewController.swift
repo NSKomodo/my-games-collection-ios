@@ -1,25 +1,25 @@
 //
-//  GenreChooserTableViewController.swift
+//  PlatformChooserTableViewController.swift
 //  My Games iOS
 //
-//  Created by Jorge Tapia on 5/19/15.
+//  Created by Jorge Tapia on 5/20/15.
 //  Copyright (c) 2015 JORGETAPIA.NET. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class GenreChooserTableViewController: UITableViewController, UITextFieldDelegate {
-
+class PlatformChooserTableViewController: UITableViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var chooseButton: UIBarButtonItem!
     
     var selectedIndexPath: NSIndexPath?
-    var data = Genre.allGenres() as! [Genre]
+    var data = Platform.allPlatforms() as! [Platform]
     
     weak var delegate: AnyObject?
     
-    var genreTitleTextField: UITextField!
-    var addGenreButton: UIButton!
+    var platformTitleTextField: UITextField!
+    var addPlatformButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,16 +42,16 @@ class GenreChooserTableViewController: UITableViewController, UITextFieldDelegat
         var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         if self.delegate!.isKindOfClass(EditGameTableViewController) {
-            (delegate as! EditGameTableViewController).delegate.game.genre = data[selectedIndexPath!.row]
+            (delegate as! EditGameTableViewController).delegate.game.platform = data[selectedIndexPath!.row]
         }
         
         appDelegate.saveContext()
         
         dismissViewControllerAnimated(true, completion: { () -> Void in
             if self.delegate!.isKindOfClass(EditGameTableViewController) {
-                (self.delegate as! EditGameTableViewController).genreLabel.text = self.data[self.selectedIndexPath!.row].title
+                (self.delegate as! EditGameTableViewController).platformLabel.text = self.data[self.selectedIndexPath!.row].title
             } else if self.delegate!.isKindOfClass(AddGameTableViewController) {
-                (self.delegate as! AddGameTableViewController).genreLabel.text = self.data[self.selectedIndexPath!.row].title
+                (self.delegate as! AddGameTableViewController).platformLabel.text = self.data[self.selectedIndexPath!.row].title
             }
         })
     }
@@ -60,10 +60,10 @@ class GenreChooserTableViewController: UITableViewController, UITextFieldDelegat
         var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var managedObjectContext = appDelegate.managedObjectContext
         
-        var genreEntity = NSEntityDescription.entityForName("Genre", inManagedObjectContext: managedObjectContext!)
+        var platformEntity = NSEntityDescription.entityForName("Platform", inManagedObjectContext: managedObjectContext!)
         
-        var newGenre = Genre(entity: genreEntity!, insertIntoManagedObjectContext: managedObjectContext)
-        newGenre.title = genreTitleTextField.text
+        var newPlatform = Platform(entity: platformEntity!, insertIntoManagedObjectContext: managedObjectContext)
+        newPlatform.title = platformTitleTextField.text
         
         appDelegate.saveContext()
         
@@ -76,15 +76,15 @@ class GenreChooserTableViewController: UITableViewController, UITextFieldDelegat
         
         selectedIndexPath = nil
         
-        data = Genre.allGenres() as! [Genre]
+        data = Platform.allPlatforms() as! [Platform]
         tableView.reloadData()
         
-        genreTitleTextField.text = String()
+        platformTitleTextField.text = String()
         view.endEditing(true)
     }
     
     func validateTitle() {
-        addGenreButton.enabled = !genreTitleTextField.text.isEmpty
+        addPlatformButton.enabled = !platformTitleTextField.text.isEmpty
     }
     
     
@@ -103,22 +103,22 @@ class GenreChooserTableViewController: UITableViewController, UITextFieldDelegat
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            var cell = tableView.dequeueReusableCellWithIdentifier("NewGenreCell") as! UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("NewPlatformCell") as! UITableViewCell
             
-            genreTitleTextField = cell.viewWithTag(1) as! UITextField
-            genreTitleTextField.delegate = self
-            genreTitleTextField.addTarget(self, action: "validateTitle", forControlEvents: UIControlEvents.EditingChanged)
+            platformTitleTextField = cell.viewWithTag(1) as! UITextField
+            platformTitleTextField.delegate = self
+            platformTitleTextField.addTarget(self, action: "validateTitle", forControlEvents: UIControlEvents.EditingChanged)
             
-            addGenreButton = cell.viewWithTag(2) as! UIButton
-            addGenreButton.addTarget(self, action: "addAction", forControlEvents: UIControlEvents.TouchUpInside)
-            addGenreButton.enabled = false
+            addPlatformButton = cell.viewWithTag(2) as! UIButton
+            addPlatformButton.addTarget(self, action: "addAction", forControlEvents: UIControlEvents.TouchUpInside)
+            addPlatformButton.enabled = false
             
             return cell
         } else {
-            var genre = data[indexPath.row]
+            var platform = data[indexPath.row]
             
-            var cell = tableView.dequeueReusableCellWithIdentifier("GenreCell") as! UITableViewCell
-            cell.textLabel?.text = genre.title
+            var cell = tableView.dequeueReusableCellWithIdentifier("PlatformCell") as! UITableViewCell
+            cell.textLabel?.text = platform.title
             
             return cell
         }
@@ -126,7 +126,7 @@ class GenreChooserTableViewController: UITableViewController, UITextFieldDelegat
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Add New Genre"
+            return "Add New Platform"
         } else {
             return nil
         }
@@ -164,5 +164,5 @@ class GenreChooserTableViewController: UITableViewController, UITextFieldDelegat
         
         return true
     }
-
+    
 }

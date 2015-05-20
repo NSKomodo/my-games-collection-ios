@@ -124,7 +124,7 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
             if indexPath.row == 2 {
                 performSegueWithIdentifier("chooseGenreSegue", sender: self)
             } else if indexPath.row == 3 {
-                // performSegueWithIdentifier("choosePlatformSegue", sender: self)
+                performSegueWithIdentifier("choosePlatformSegue", sender: self)
             }
         }
     }
@@ -198,6 +198,11 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
             var genreChooserTableViewController = genreChooserNavigationController.topViewController as! GenreChooserTableViewController
             
             genreChooserTableViewController.delegate = self
+        } else if segue.identifier == "choosePlatformSegue" {
+            var platformChooserNavigationController = segue.destinationViewController as! UINavigationController
+            var platformChooserTableViewController = platformChooserNavigationController.topViewController as! PlatformChooserTableViewController
+            
+            platformChooserTableViewController.delegate = self
         }
     }
 }

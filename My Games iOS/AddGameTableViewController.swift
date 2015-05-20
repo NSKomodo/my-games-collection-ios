@@ -118,7 +118,7 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
         newGame.modes = !modesTextField.text.isEmpty ? modesTextField.text.stringByReplacingOccurrencesOfString(",", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil) : String()
         
         newGame.genre = genreLabel.text! == "No Genre" ? defaultGenre! : Genre.genreWithTitle(genreLabel.text!)!
-        newGame.platform = defaultPlatform!
+        newGame.platform = platformLabel.text! == "No Platform" ? defaultPlatform! : Platform.platformWithTitle(platformLabel.text!)!
         
         newGame.buy = buyTextField.text
         
@@ -152,7 +152,7 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
             if indexPath.row == 2 {
                 performSegueWithIdentifier("chooseGenreFromAddSegue", sender: self)
             } else if indexPath.row == 3 {
-                // performSegueWithIdentifier("choosePlatformSegue", sender: self)
+                performSegueWithIdentifier("choosePlatformFromAddSegue", sender: self)
             }
         }
     }
@@ -234,6 +234,11 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
             var genreChooserTableViewController = genreChooserNavigationController.topViewController as! GenreChooserTableViewController
             
             genreChooserTableViewController.delegate = self
+        } else if segue.identifier == "choosePlatformFromAddSegue" {
+            var platformChooserNavigationController = segue.destinationViewController as! UINavigationController
+            var platformChooserTableViewController = platformChooserNavigationController.topViewController as! PlatformChooserTableViewController
+            
+            platformChooserTableViewController.delegate = self
         }
     }
 }

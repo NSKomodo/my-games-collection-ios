@@ -473,6 +473,7 @@
                         <outlet property="publisherTextField" destination="s9t-oP-hly" id="Jkl-P3-Z2c"/>
                         <outlet property="titleTextField" destination="coF-Zk-BPb" id="IfQ-9n-SDK"/>
                         <segue destination="5Rt-R2-CPO" kind="presentation" identifier="chooseGenreFromAddSegue" id="UrK-xP-hKN"/>
+                        <segue destination="Cfr-1h-dG3" kind="presentation" identifier="choosePlatformFromAddSegue" id="mGs-Ih-XGi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqC-17-LTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -697,6 +698,7 @@
                         <outlet property="publisherTextField" destination="ayf-ef-BPx" id="6Ep-Rf-l9n"/>
                         <outlet property="titleTextField" destination="lC1-WV-eVM" id="sGA-FD-MkP"/>
                         <segue destination="5Rt-R2-CPO" kind="presentation" identifier="chooseGenreSegue" id="k5Y-8l-78e"/>
+                        <segue destination="Cfr-1h-dG3" kind="presentation" identifier="choosePlatformSegue" id="0V7-6q-cyf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGW-G2-xip" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -760,7 +762,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Choose Genre" id="dVu-Xy-3wN">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rhn-1W-znm"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rhn-1W-znm">
+                            <connections>
+                                <action selector="cancelAction:" destination="5E1-Kn-Gvm" id="kcy-Lt-Hnt"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Choose" style="done" id="nFE-S2-Fxj">
                             <connections>
                                 <action selector="chooseAction:" destination="5E1-Kn-Gvm" id="0mO-jc-SEP"/>
@@ -1569,6 +1575,100 @@ Full Sail University: http://fullsail.edu  </string>
             </objects>
             <point key="canvasLocation" x="5724" y="402"/>
         </scene>
+        <!--Choose Platform-->
+        <scene sceneID="pm8-Wi-dJc">
+            <objects>
+                <tableViewController id="UZ6-3l-GNo" customClass="PlatformChooserTableViewController" customModule="My_Games_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Aon-dw-ehI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewPlatformCell" id="eyv-Ao-Xce">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eyv-Ao-Xce" id="6mt-16-SBw">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Platform Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvM-gg-PCb">
+                                            <rect key="frame" x="15" y="0.0" width="532" height="43"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                        </textField>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8q1-DG-Yzz">
+                                            <rect key="frame" x="555" y="7" width="30" height="30"/>
+                                            <state key="normal" title="Add">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="tvM-gg-PCb" secondAttribute="bottom" constant="-8" id="US8-lj-1Os"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="8q1-DG-Yzz" secondAttribute="trailing" constant="7" id="X8r-IY-FvZ"/>
+                                        <constraint firstItem="tvM-gg-PCb" firstAttribute="leading" secondItem="6mt-16-SBw" secondAttribute="leading" constant="15" id="gf5-FL-yNI"/>
+                                        <constraint firstAttribute="centerY" secondItem="8q1-DG-Yzz" secondAttribute="centerY" constant="-0.5" id="lwa-3N-hWB"/>
+                                        <constraint firstItem="tvM-gg-PCb" firstAttribute="top" secondItem="6mt-16-SBw" secondAttribute="topMargin" constant="-8" id="p44-J1-Fnt"/>
+                                        <constraint firstItem="8q1-DG-Yzz" firstAttribute="leading" secondItem="tvM-gg-PCb" secondAttribute="trailing" constant="8" id="sMv-4z-xkJ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="PlatformCell" textLabel="UUJ-RU-WcS" style="IBUITableViewCellStyleDefault" id="kao-PP-jFP">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kao-PP-jFP" id="Qr9-ov-JcF">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="PS4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UUJ-RU-WcS">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UZ6-3l-GNo" id="ShJ-EM-bzB"/>
+                            <outlet property="delegate" destination="UZ6-3l-GNo" id="bTS-wr-wRn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose Platform" id="xM1-DS-Q1j">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RyF-7n-ZPN">
+                            <connections>
+                                <action selector="cancelAction:" destination="UZ6-3l-GNo" id="pve-cP-tqa"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Choose" style="done" id="9Df-vU-h4C">
+                            <connections>
+                                <action selector="chooseAction:" destination="UZ6-3l-GNo" id="Lay-VI-pYd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="chooseButton" destination="9Df-vU-h4C" id="6DD-Vq-vTi"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Mv-Hu-FdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8194" y="402"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="54f-V6-AcV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cfr-1h-dG3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2gm-m5-KeZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UZ6-3l-GNo" kind="relationship" relationship="rootViewController" id="I0x-9z-pXr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lQp-z6-RMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7382" y="402"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Call of Duty: Advanced Warfare" width="140" height="140"/>
@@ -1578,6 +1678,7 @@ Full Sail University: http://fullsail.edu  </string>
         <image name="settings_icon" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="mGs-Ih-XGi"/>
         <segue reference="UrK-xP-hKN"/>
         <segue reference="Gpb-MD-x3c"/>
     </inferredMetricsTieBreakers>
