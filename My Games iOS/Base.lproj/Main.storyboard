@@ -472,6 +472,7 @@
                         <outlet property="platformLabel" destination="whh-eR-QsQ" id="bYv-mT-Bkb"/>
                         <outlet property="publisherTextField" destination="s9t-oP-hly" id="Jkl-P3-Z2c"/>
                         <outlet property="titleTextField" destination="coF-Zk-BPb" id="IfQ-9n-SDK"/>
+                        <segue destination="5Rt-R2-CPO" kind="presentation" identifier="chooseGenreFromAddSegue" id="UrK-xP-hKN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqC-17-LTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1577,6 +1578,7 @@ Full Sail University: http://fullsail.edu  </string>
         <image name="settings_icon" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UrK-xP-hKN"/>
         <segue reference="Gpb-MD-x3c"/>
     </inferredMetricsTieBreakers>
 </document>

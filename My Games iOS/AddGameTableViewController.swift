@@ -117,7 +117,7 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
         newGame.publisher = publisherTextField.text
         newGame.modes = !modesTextField.text.isEmpty ? modesTextField.text.stringByReplacingOccurrencesOfString(",", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil) : String()
         
-        newGame.genre = defaultGenre!
+        newGame.genre = genreLabel.text! == "No Genre" ? defaultGenre! : Genre.genreWithTitle(genreLabel.text!)!
         newGame.platform = defaultPlatform!
         
         newGame.buy = buyTextField.text
@@ -144,6 +144,17 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
     // Methods:
     func resignOnTap() {
         view.endEditing(true)
+    }
+    
+    // MARK: Table view delegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 {
+            if indexPath.row == 2 {
+                performSegueWithIdentifier("chooseGenreFromAddSegue", sender: self)
+            } else if indexPath.row == 3 {
+                // performSegueWithIdentifier("choosePlatformSegue", sender: self)
+            }
+        }
     }
     
     // Text field delegate
@@ -214,5 +225,15 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
         addImageButton.accessibilityIdentifier = thumbnailTitle
         
         picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "chooseGenreFromAddSegue" {
+            var genreChooserNavigationController = segue.destinationViewController as! UINavigationController
+            var genreChooserTableViewController = genreChooserNavigationController.topViewController as! GenreChooserTableViewController
+            
+            genreChooserTableViewController.delegate = self
+        }
     }
 }

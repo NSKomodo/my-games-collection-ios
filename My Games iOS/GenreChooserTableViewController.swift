@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GenreChooserTableViewController: UITableViewController, UITextFieldDelegate {
 
@@ -14,6 +15,8 @@ class GenreChooserTableViewController: UITableViewController, UITextFieldDelegat
     
     var selectedIndexPath: NSIndexPath?
     var data = Genre.allGenres() as! [Genre]
+    
+    weak var delegate: AnyObject?
     
     var genreTitleTextField: UITextField!
     var addGenreButton: UIButton!
@@ -32,11 +35,39 @@ class GenreChooserTableViewController: UITableViewController, UITextFieldDelegat
     
     // MARK: Actions
     @IBAction func chooseAction(sender: AnyObject) {
+        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
+        if self.delegate!.isKindOfClass(EditGameTableViewController) {
+            (delegate as! EditGameTableViewController).delegate.game.genre = data[selectedIndexPath!.row]
+        }
+        
+        appDelegate.saveContext()
+        
+        dismissViewControllerAnimated(true, completion: { () -> Void in
+            if self.delegate!.isKindOfClass(EditGameTableViewController) {
+                (self.delegate as! EditGameTableViewController).genreLabel.text = self.data[self.selectedIndexPath!.row].title
+            } else if self.delegate!.isKindOfClass(AddGameTableViewController) {
+                (self.delegate as! AddGameTableViewController).genreLabel.text = self.data[self.selectedIndexPath!.row].title
+            }
+        })
     }
     
     func addAction() {
-        println("New Genre: \(genreTitleTextField.text)")
+        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        var managedObjectContext = appDelegate.managedObjectContext
+        
+        var genreEntity = NSEntityDescription.entityForName("Genre", inManagedObjectContext: managedObjectContext!)
+        
+        var newGenre = Genre(entity: genreEntity!, insertIntoManagedObjectContext: managedObjectContext)
+        newGenre.title = genreTitleTextField.text
+        
+        appDelegate.saveContext()
+        
+        genreTitleTextField.text = String()
+        view.endEditing(true)
+        
+        data = Genre.allGenres() as! [Genre]
+        tableView.reloadData()
     }
     
     func validateTitle() {

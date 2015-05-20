@@ -190,4 +190,14 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
         
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
+
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "chooseGenreSegue" {
+            var genreChooserNavigationController = segue.destinationViewController as! UINavigationController
+            var genreChooserTableViewController = genreChooserNavigationController.topViewController as! GenreChooserTableViewController
+            
+            genreChooserTableViewController.delegate = self
+        }
+    }
 }
