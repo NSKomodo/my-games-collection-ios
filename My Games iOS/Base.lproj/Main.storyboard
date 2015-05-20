@@ -817,9 +817,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Search Results" id="Pub-D7-pTE"/>
-                    <connections>
-                        <segue destination="z03-ue-5HT" kind="show" identifier="" id="Gpb-MD-x3c"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zdz-sU-5Yv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1679,7 +1676,6 @@ Full Sail University: http://fullsail.edu  </string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mGs-Ih-XGi"/>
-        <segue reference="gOC-D5-F8o"/>
         <segue reference="UrK-xP-hKN"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -49,11 +49,5 @@ class SearchResultsTableViewController: UITableViewController {
         detailTableViewController.game = game
         presentingViewController!.navigationController?.pushViewController(detailTableViewController, animated: true)
     }
-    
-    // MARK: Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var detailTableViewController = segue.destinationViewController as! DetailTableViewController
-        detailTableViewController.game = sender as! Game
-    }
 
 }
