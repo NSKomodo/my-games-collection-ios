@@ -42,7 +42,13 @@ class PlatformChooserTableViewController: UITableViewController, UITextFieldDele
         var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         if self.delegate!.isKindOfClass(EditGameTableViewController) {
-            (delegate as! EditGameTableViewController).delegate.game.platform = data[selectedIndexPath!.row]
+            if (delegate as! EditGameTableViewController).delegate.game.platform != data[selectedIndexPath!.row] {
+                if (delegate as! EditGameTableViewController).titleTextField.text.isEmpty {
+                    (delegate as! EditGameTableViewController).saveButton.enabled = false
+                } else {
+                    (delegate as! EditGameTableViewController).saveButton.enabled = true
+                }
+            }
         }
         
         appDelegate.saveContext()

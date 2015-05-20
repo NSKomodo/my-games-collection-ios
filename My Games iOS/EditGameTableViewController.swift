@@ -10,7 +10,9 @@ import UIKit
 import MobileCoreServices
 import CoreData
 
-class EditGameTableViewController: UITableViewController, UITextFieldDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditGameTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     @IBOutlet weak var addImageButton: UIButton!
     
@@ -27,6 +29,17 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
 
     weak var delegate: DetailTableViewController!
     var thumbnail: Thumbnail?
+    
+    var originalTitle: String?
+    var originalThumbnail: String?
+    var originalPublisher: String?
+    var originalModes: String?
+    var originalGenre: String?
+    var originalPlatform: String?
+    var originalBuyLink: String?
+    var originalDesc: String?
+    
+    var modifiedValue = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +65,9 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
         buyTextField.text = delegate.game.buy
         
         descTextView.text = delegate.game.desc
+        
+        captureOriginalValues()
+        saveButton.enabled = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,7 +129,47 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func textEditingChanged(sender: AnyObject) {
+        var textField = sender as! UITextField
+        
+        if textField != titleTextField {
+            modifiedValue = true
+        }
+        
+        if titleTextField.text.isEmpty && modifiedValue {
+            saveButton.enabled = false
+        } else if titleTextField.text.isEmpty && !modifiedValue {
+            saveButton.enabled = false
+        } else if !titleTextField.text.isEmpty && titleTextField.text == originalTitle && modifiedValue {
+            saveButton.enabled = true
+        } else if !titleTextField.text.isEmpty && titleTextField.text == originalTitle && !modifiedValue {
+            saveButton.enabled = false
+        } else if !titleTextField.text.isEmpty && titleTextField.text != originalTitle && modifiedValue {
+            saveButton.enabled = true
+        } else if !titleTextField.text.isEmpty && titleTextField.text != originalTitle && !modifiedValue {
+            saveButton.enabled = true
+        } else {
+            saveButton.enabled = false
+        }
+    }
+    
+    
     // Methods:
+    func captureOriginalValues() {
+        originalThumbnail = delegate.game.thumbnail.title
+        
+        originalTitle = delegate.game.title
+        originalPublisher = delegate.game.publisher
+        originalModes = delegate.game.modes
+        
+        originalGenre = delegate.game.genre.title
+        originalPlatform = delegate.game.platform.title
+        
+        originalBuyLink = delegate.game.buy
+        
+        originalDesc = delegate.game.desc
+    }
+    
     func resignOnTap() {
         view.endEditing(true)
     }
@@ -131,7 +187,13 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
     
     // MARK: Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // TODO: add 'next' logic
         return true
+    }
+    
+    // MARK: Text view delegate
+    func textViewDidChange(textView: UITextView) {
+        
     }
     
     // MARK: Action sheet delegate

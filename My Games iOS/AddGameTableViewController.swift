@@ -12,6 +12,8 @@ import CoreData
 
 class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     @IBOutlet weak var addImageButton: UIButton!
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -39,8 +41,8 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
         
         clearsSelectionOnViewWillAppear = true
         
-        titleTextField.becomeFirstResponder()
         addImageButton.accessibilityIdentifier = "add_image"
+        saveButton.enabled = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -139,6 +141,14 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
         actionSheet.addButtonWithTitle("From Photo Library")
         actionSheet.addButtonWithTitle("Existing Thumbnail")
         actionSheet.showInView(self.view)
+    }
+    
+    @IBAction func textEditingChanged(sender: AnyObject) {
+        if (sender as! UITextField).text.isEmpty {
+            saveButton.enabled = false
+        } else {
+            saveButton.enabled = true
+        }
     }
     
     // Methods:
