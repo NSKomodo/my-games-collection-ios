@@ -115,7 +115,7 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
         
         newGame.title = titleTextField.text
         newGame.publisher = publisherTextField.text
-        newGame.modes = modesTextField.text
+        newGame.modes = !modesTextField.text.isEmpty ? modesTextField.text.stringByReplacingOccurrencesOfString(",", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil) : String()
         
         newGame.genre = defaultGenre!
         newGame.platform = defaultPlatform!

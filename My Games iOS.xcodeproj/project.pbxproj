@@ -33,6 +33,7 @@
 		6CF0677F1B0B838B00DD420D /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0677E1B0B838B00DD420D /* Thumbnail.swift */; };
 		6CF067811B0B838B00DD420D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF067801B0B838B00DD420D /* Game.swift */; };
 		6CF067831B0B99BD00DD420D /* ManageThumbnailsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF067821B0B99BD00DD420D /* ManageThumbnailsCollectionViewController.swift */; };
+		6CF067851B0C157100DD420D /* GenreChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF067841B0C157100DD420D /* GenreChooserTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		6CF0677E1B0B838B00DD420D /* Thumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		6CF067801B0B838B00DD420D /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		6CF067821B0B99BD00DD420D /* ManageThumbnailsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageThumbnailsCollectionViewController.swift; sourceTree = "<group>"; };
+		6CF067841B0C157100DD420D /* GenreChooserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreChooserTableViewController.swift; sourceTree = "<group>"; };
 		AE1704E7F6BC17E7D3247736 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E60120CDFAF87D6F6FE8F30D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F1B982487CD4A0CD3AD15245 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +175,7 @@
 				6CE9C6CB1B07B4C700CF7645 /* DetailTableViewController.swift */,
 				6CF0675E1B0A654400DD420D /* AddGameTableViewController.swift */,
 				6CF067601B0A776800DD420D /* EditGameTableViewController.swift */,
+				6CF067841B0C157100DD420D /* GenreChooserTableViewController.swift */,
 				6C9680581B05497400D5FC74 /* Main.storyboard */,
 				6C96805B1B05497400D5FC74 /* Images.xcassets */,
 				6C96805D1B05497400D5FC74 /* LaunchScreen.xib */,
@@ -397,6 +400,7 @@
 				6CF0677F1B0B838B00DD420D /* Thumbnail.swift in Sources */,
 				6C7AB0BD1B06DBDE0095482E /* ThumbnailsExtension.swift in Sources */,
 				6CF067611B0A776800DD420D /* EditGameTableViewController.swift in Sources */,
+				6CF067851B0C157100DD420D /* GenreChooserTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

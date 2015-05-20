@@ -96,7 +96,7 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
         delegate.game.title = titleTextField.text
         delegate.title = titleTextField.text
         delegate.game.publisher = publisherTextField.text
-        delegate.game.modes = modesTextField.text
+        delegate.game.modes = !modesTextField.text.isEmpty ? modesTextField.text.stringByReplacingOccurrencesOfString(",", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil) : String()
         
         delegate.game.genre = Genre.genreWithTitle(genreLabel.text!)!
         delegate.game.platform = Platform.platformWithTitle(platformLabel.text!)!
@@ -118,12 +118,23 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
         view.endEditing(true)
     }
     
-    // Text field delegate
+    // MARK: Table view delegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 {
+            if indexPath.row == 2 {
+                performSegueWithIdentifier("chooseGenreSegue", sender: self)
+            } else if indexPath.row == 3 {
+                // performSegueWithIdentifier("choosePlatformSegue", sender: self)
+            }
+        }
+    }
+    
+    // MARK: Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         return true
     }
     
-    // Action sheet delegate
+    // MARK: Action sheet delegate
     func actionSheet(actionSheet: UIActionSheet, didDismissWithButtonIndex buttonIndex: Int) {
         if buttonIndex == 1 {
             // Simulator handler
@@ -157,7 +168,7 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
         }
     }
     
-    // Image picker controller delegate
+    // MARK: Image picker controller delegate
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var managedObjectContext = appDelegate.managedObjectContext
