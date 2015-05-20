@@ -14,6 +14,7 @@ class MasterTableViewController: UITableViewController, UISearchBarDelegate, UIS
     @IBOutlet weak var totalGamesLabel: UILabel!
     
     var searchController: UISearchController!
+    var searchResults = [Game]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -251,7 +252,13 @@ class MasterTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     // MARK: Search results updating
     func updateSearchResultsForSearchController(searchController: UISearchController) {
+        searchResults = Game.allGames(title: searchController.searchBar.text) as! [Game]
         
+        let searchNavigationController = self.searchController.searchResultsController as! UINavigationController
+        let searchResultsTableViewController = searchNavigationController.topViewController as! SearchResultsTableViewController
+        
+        searchResultsTableViewController.searchResults = searchResults
+        searchResultsTableViewController.tableView.reloadData()
     }
     
     // MARK: Navigation

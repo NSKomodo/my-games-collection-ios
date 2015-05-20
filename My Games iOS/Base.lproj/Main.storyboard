@@ -99,7 +99,7 @@
         <!--Call of Duty: Advanced Warfare-->
         <scene sceneID="ZDU-MX-bWe">
             <objects>
-                <tableViewController id="z03-ue-5HT" customClass="DetailTableViewController" customModule="My_Games_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="detailTableViewController" id="z03-ue-5HT" customClass="DetailTableViewController" customModule="My_Games_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="XcF-Zh-las">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -781,7 +781,7 @@
             </objects>
             <point key="canvasLocation" x="6536" y="402"/>
         </scene>
-        <!--Search Results Table View Controller-->
+        <!--Search Results-->
         <scene sceneID="ruy-fr-88r">
             <objects>
                 <tableViewController id="Zg1-XH-JcW" customClass="SearchResultsTableViewController" customModule="My_Games_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -795,13 +795,13 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fha-tY-Lxb" id="xza-id-Whe">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ihd-X0-lDa">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Call of Duty: Advanced Warfare" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ihd-X0-lDa">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UO4-3f-yWH">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="PS4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UO4-3f-yWH">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -816,9 +816,9 @@
                             <outlet property="delegate" destination="Zg1-XH-JcW" id="o1c-D2-QzJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Pub-D7-pTE"/>
+                    <navigationItem key="navigationItem" title="Search Results" id="Pub-D7-pTE"/>
                     <connections>
-                        <segue destination="z03-ue-5HT" kind="show" identifier="detailFromSearchSegue" id="Gpb-MD-x3c"/>
+                        <segue destination="z03-ue-5HT" kind="show" identifier="" id="Gpb-MD-x3c"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zdz-sU-5Yv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1679,7 +1679,7 @@ Full Sail University: http://fullsail.edu  </string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mGs-Ih-XGi"/>
+        <segue reference="gOC-D5-F8o"/>
         <segue reference="UrK-xP-hKN"/>
-        <segue reference="Gpb-MD-x3c"/>
     </inferredMetricsTieBreakers>
 </document>

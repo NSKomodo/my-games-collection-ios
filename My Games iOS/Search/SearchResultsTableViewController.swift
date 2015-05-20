@@ -9,6 +9,8 @@
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
+    
+    var searchResults = [Game]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,42 @@ class SearchResultsTableViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: Table view data source
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchResults.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let game = searchResults[indexPath.row]
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("SearchResultCell") as! UITableViewCell
+        cell.textLabel?.text = game.title
+        cell.detailTextLabel?.text = game.platform.title
+        
+        return cell
+    }
+    
+    // MARK: Table view delegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var game = searchResults[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailTableViewController = storyboard.instantiateViewControllerWithIdentifier("detailTableViewController") as! DetailTableViewController
+        
+        detailTableViewController.game = game
+        presentingViewController!.navigationController?.pushViewController(detailTableViewController, animated: true)
+    }
+    
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var detailTableViewController = segue.destinationViewController as! DetailTableViewController
+        detailTableViewController.game = sender as! Game
     }
 
 }
