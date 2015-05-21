@@ -95,8 +95,22 @@ class ManageThumbnailsCollectionViewController: UICollectionViewController, UIAl
             
             let selectedIndexPaths = collectionView?.indexPathsForSelectedItems() as! [NSIndexPath]
             
+            var defaultThumbnail = Thumbnail.thumbnailWithTitle("default_image")
+            
+            if defaultThumbnail == nil {
+                var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                var managedObjectContext = appDelegate.managedObjectContext
+                
+                let thumbnailEntity = NSEntityDescription.entityForName("Thumbnail", inManagedObjectContext: managedObjectContext!)
+                defaultThumbnail = Thumbnail(entity: thumbnailEntity!, insertIntoManagedObjectContext: managedObjectContext!)
+                defaultThumbnail?.title = "default_image"
+                defaultThumbnail?.data = UIImagePNGRepresentation(UIImage(named: "default_image"))
+                
+                appDelegate.saveContext()
+            }
+            
             for game in Game.allGames() as! [Game] {
-                game.thumbnail = Thumbnail.thumbnailWithTitle("default_image")!
+                game.thumbnail = defaultThumbnail!
             }
             
             appDelegate.saveContext()
