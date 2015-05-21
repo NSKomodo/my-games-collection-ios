@@ -10,12 +10,27 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController, UIAlertViewDelegate {
     
+    @IBOutlet weak var manageThumbnailsCell: UITableViewCell!
+    @IBOutlet weak var manageThumbnailsLabel: UILabel!
+    
     weak var delegate: MasterTableViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         clearsSelectionOnViewWillAppear = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (Thumbnail.allThumbnails()?.count > 0) {
+            manageThumbnailsCell.userInteractionEnabled = true
+            manageThumbnailsLabel.enabled = true
+        } else {
+            manageThumbnailsCell.userInteractionEnabled = false
+            manageThumbnailsLabel.enabled = false
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,9 +78,13 @@ class SettingsTableViewController: UITableViewController, UIAlertViewDelegate {
         if alertView.tag == 3 {
             if (buttonIndex != alertView.cancelButtonIndex) {
                 delegate.importJSONData(filename: "data")
+                view.setNeedsDisplay()
             }
             
             tableView.deselectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2), animated: true)
+            
+            manageThumbnailsCell.userInteractionEnabled = true
+            manageThumbnailsLabel.enabled = true
         } else if alertView.tag == 4 {
             if (buttonIndex != alertView.cancelButtonIndex) {
                 Game.removeAll()
@@ -75,6 +94,9 @@ class SettingsTableViewController: UITableViewController, UIAlertViewDelegate {
             }
             
             tableView.deselectRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 2), animated: true)
+            
+            manageThumbnailsCell.userInteractionEnabled = false
+            manageThumbnailsLabel.enabled = false
         }
     }
     

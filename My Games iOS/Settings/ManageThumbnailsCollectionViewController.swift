@@ -108,6 +108,10 @@ class ManageThumbnailsCollectionViewController: UICollectionViewController, UIAl
             trashButton.enabled = false
             
             reloadData()
+            
+            if data.count == 0 {
+                self.navigationController?.popViewControllerAnimated(true)
+            }
         }
     }
 }

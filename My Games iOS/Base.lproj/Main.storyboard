@@ -967,6 +967,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="manageThumbnailsCell" destination="yNx-qv-MJP" id="tNm-P3-QK1"/>
+                        <outlet property="manageThumbnailsLabel" destination="JEX-Ck-ShL" id="6Ub-Jq-hU1"/>
                         <segue destination="XoT-Co-QoI" kind="show" identifier="aboutSegue" id="lAi-kd-egR"/>
                         <segue destination="rpc-i3-EJv" kind="show" identifier="manageGenresSegue" id="CsZ-IL-7Vp"/>
                         <segue destination="hrz-Ab-pY6" kind="show" identifier="managePlatformsSegue" id="vXw-El-55X"/>
