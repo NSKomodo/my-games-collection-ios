@@ -28,14 +28,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ogD-Fh-hKI">
-                                            <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                            <rect key="frame" x="15" y="0.0" width="65" height="65"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="65" id="JLS-5t-9Gl"/>
                                                 <constraint firstAttribute="width" constant="65" id="rcy-1h-w1h"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Call of Duty: Advanced Warfare" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjZ-8H-W3U">
-                                            <rect key="frame" x="73" y="8" width="404" height="49"/>
+                                            <rect key="frame" x="88" y="8" width="389" height="49"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                         <constraint firstItem="FjZ-8H-W3U" firstAttribute="leading" secondItem="ogD-Fh-hKI" secondAttribute="trailing" constant="8" id="a8X-cS-yEJ"/>
                                         <constraint firstItem="HzK-gi-w0v" firstAttribute="leading" secondItem="FjZ-8H-W3U" secondAttribute="trailing" constant="8" id="hGB-TN-dzF"/>
                                         <constraint firstItem="FjZ-8H-W3U" firstAttribute="bottom" secondItem="UAj-et-v4g" secondAttribute="bottomMargin" id="nbb-Rd-aGc"/>
-                                        <constraint firstItem="ogD-Fh-hKI" firstAttribute="leading" secondItem="UAj-et-v4g" secondAttribute="leading" id="rHI-Ac-Zpt"/>
+                                        <constraint firstItem="ogD-Fh-hKI" firstAttribute="leading" secondItem="UAj-et-v4g" secondAttribute="leading" constant="15" id="rHI-Ac-Zpt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -476,6 +476,7 @@
                         <outlet property="titleTextField" destination="coF-Zk-BPb" id="IfQ-9n-SDK"/>
                         <segue destination="5Rt-R2-CPO" kind="presentation" identifier="chooseGenreFromAddSegue" id="UrK-xP-hKN"/>
                         <segue destination="Cfr-1h-dG3" kind="presentation" identifier="choosePlatformFromAddSegue" id="mGs-Ih-XGi"/>
+                        <segue destination="nnR-HA-fs2" kind="presentation" identifier="chooseThumbnailFromAddSegue" id="5af-TK-y7O"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqC-17-LTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -709,6 +710,7 @@
                         <outlet property="titleTextField" destination="lC1-WV-eVM" id="sGA-FD-MkP"/>
                         <segue destination="5Rt-R2-CPO" kind="presentation" identifier="chooseGenreSegue" id="k5Y-8l-78e"/>
                         <segue destination="Cfr-1h-dG3" kind="presentation" identifier="choosePlatformSegue" id="0V7-6q-cyf"/>
+                        <segue destination="nnR-HA-fs2" kind="presentation" identifier="chooseThumbnailSegue" id="obQ-GW-9eU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGW-G2-xip" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1676,6 +1678,82 @@ Full Sail University: http://fullsail.edu  </string>
             </objects>
             <point key="canvasLocation" x="7382" y="402"/>
         </scene>
+        <!--Choose Thumbnail-->
+        <scene sceneID="zKB-RP-VOh">
+            <objects>
+                <collectionViewController id="Xhf-RW-ytn" customClass="ThumbnailChooserCollectionViewController" customModule="My_Games_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3jx-dg-Nnc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dVk-jz-ow9">
+                            <size key="itemSize" width="66" height="66"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ThumbnailCell" id="YnI-zg-qVu">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Call of Duty: Advanced Warfare" translatesAutoresizingMaskIntoConstraints="NO" id="5TS-ub-u85">
+                                            <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                                        </imageView>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check_selection" translatesAutoresizingMaskIntoConstraints="NO" id="747-ah-8FH">
+                                            <rect key="frame" x="36" y="36" width="30" height="30"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Xhf-RW-ytn" id="X54-R7-E9d"/>
+                            <outlet property="delegate" destination="Xhf-RW-ytn" id="iBb-3M-jc0"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Choose Thumbnail" id="dhj-g9-Qdd">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="hux-Hy-klp">
+                            <connections>
+                                <action selector="cancelAction:" destination="Xhf-RW-ytn" id="nUh-Ze-yE2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Choose" style="done" id="uZR-Q2-tq8">
+                            <connections>
+                                <action selector="chooseAction:" destination="Xhf-RW-ytn" id="fQx-FC-MRO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="chooseButton" destination="uZR-Q2-tq8" id="AuR-Zr-n4V"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wpT-oK-Swe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9772" y="402"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fVS-ai-rm0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nnR-HA-fs2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YTg-RN-cKt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xhf-RW-ytn" kind="relationship" relationship="rootViewController" id="M53-dq-DHB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y4f-sE-gGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8960" y="402"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Call of Duty: Advanced Warfare" width="140" height="140"/>
@@ -1685,6 +1763,7 @@ Full Sail University: http://fullsail.edu  </string>
         <image name="settings_icon" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="5af-TK-y7O"/>
         <segue reference="UrK-xP-hKN"/>
         <segue reference="mGs-Ih-XGi"/>
     </inferredMetricsTieBreakers>

@@ -81,7 +81,11 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
         actionSheet.addButtonWithTitle("Cancel")
         actionSheet.addButtonWithTitle("Take Photo")
         actionSheet.addButtonWithTitle("From Photo Library")
-        actionSheet.addButtonWithTitle("Existing Thumbnail")
+        
+        if Thumbnail.allThumbnails()?.count > 0 {
+            actionSheet.addButtonWithTitle("Existing Thumbnail")
+        }
+        
         actionSheet.showInView(self.view)
     }
 
@@ -226,7 +230,7 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
             
             self.presentViewController(imagePickerController, animated: true, completion: nil)
         } else if buttonIndex == 3 {
-            UIAlertView(title: "My Game Collection", message: "TODO: Choose Existing Thumbnail", delegate: nil, cancelButtonTitle: "Dismiss").show()
+            performSegueWithIdentifier("chooseThumbnailSegue", sender: self)
         }
     }
     
@@ -250,6 +254,8 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
         appDelegate.saveContext()
         addImageButton.setImage(UIImage(data: newThumbnail.data), forState: UIControlState.Normal)
         
+        saveButton.enabled = true
+        
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -265,6 +271,11 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
             var platformChooserTableViewController = platformChooserNavigationController.topViewController as! PlatformChooserTableViewController
             
             platformChooserTableViewController.delegate = self
+        } else if segue.identifier == "chooseThumbnailSegue" {
+            var thumbnailChooserNavigationController = segue.destinationViewController as! UINavigationController
+            var thumbnailChooserCollectionViewController = thumbnailChooserNavigationController.topViewController as! ThumbnailChooserCollectionViewController
+            
+            thumbnailChooserCollectionViewController.delegate = self
         }
     }
 }

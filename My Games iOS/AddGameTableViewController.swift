@@ -59,13 +59,6 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
     }
 
     @IBAction func saveAction(sender: AnyObject) {
-        if titleTextField.text.isEmpty {
-            titleTextField.becomeFirstResponder()
-            titleTextField.placeholder = "Title is required"
-            
-            return
-        }
-        
         var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedObjectContext = appDelegate.managedObjectContext
         
@@ -119,8 +112,8 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
         newGame.publisher = publisherTextField.text
         newGame.modes = !modesTextField.text.isEmpty ? modesTextField.text.stringByReplacingOccurrencesOfString(",", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil) : String()
         
-        newGame.genre = genreLabel.text! == "No Genre" ? defaultGenre! : Genre.genreWithTitle(genreLabel.text!)!
-        newGame.platform = platformLabel.text! == "No Platform" ? defaultPlatform! : Platform.platformWithTitle(platformLabel.text!)!
+        newGame.genre = genreLabel.text! == "Choose Genre" ? defaultGenre! : Genre.genreWithTitle(genreLabel.text!)!
+        newGame.platform = platformLabel.text! == "Choose Platform" ? defaultPlatform! : Platform.platformWithTitle(platformLabel.text!)!
         
         newGame.buy = buyTextField.text
         
@@ -139,7 +132,11 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
         actionSheet.addButtonWithTitle("Cancel")
         actionSheet.addButtonWithTitle("Take Photo")
         actionSheet.addButtonWithTitle("From Photo Library")
-        actionSheet.addButtonWithTitle("Existing Thumbnail")
+        
+        if Thumbnail.allThumbnails()?.count > 0 {
+            actionSheet.addButtonWithTitle("Existing Thumbnail")
+        }
+        
         actionSheet.showInView(self.view)
     }
     
@@ -202,7 +199,7 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
             
             self.presentViewController(imagePickerController, animated: true, completion: nil)
         } else if buttonIndex == 3 {
-            UIAlertView(title: "My Game Collection", message: "TODO: Choose Existing Thumbnail", delegate: nil, cancelButtonTitle: "Dismiss").show()
+            performSegueWithIdentifier("chooseThumbnailFromAddSegue", sender: self)
         }
     }
     
@@ -249,6 +246,11 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
             var platformChooserTableViewController = platformChooserNavigationController.topViewController as! PlatformChooserTableViewController
             
             platformChooserTableViewController.delegate = self
+        } else if segue.identifier == "chooseThumbnailFromAddSegue" {
+            var thumbnailChooserNavigationController = segue.destinationViewController as! UINavigationController
+            var thumbnailChooserCollectionViewController = thumbnailChooserNavigationController.topViewController as! ThumbnailChooserCollectionViewController
+            
+            thumbnailChooserCollectionViewController.delegate = self
         }
     }
 }
