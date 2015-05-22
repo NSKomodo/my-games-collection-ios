@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0825A457D91798CA4E31A437 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B982487CD4A0CD3AD15245 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6C5C75CA1B0D4CA8001A986E /* ThumbnailChooserCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C75C91B0D4CA8001A986E /* ThumbnailChooserCollectionViewController.swift */; };
 		6C7AB0AA1B05880A0095482E /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AB0A91B05880A0095482E /* SearchResultsTableViewController.swift */; };
 		6C7AB0AC1B0593C50095482E /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AB0AB1B0593C50095482E /* data.json */; };
@@ -81,9 +80,6 @@
 		6CF067821B0B99BD00DD420D /* ManageThumbnailsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageThumbnailsCollectionViewController.swift; sourceTree = "<group>"; };
 		6CF067841B0C157100DD420D /* GenreChooserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreChooserTableViewController.swift; sourceTree = "<group>"; };
 		6CF067861B0CD5E200DD420D /* PlatformChooserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformChooserTableViewController.swift; sourceTree = "<group>"; };
-		AE1704E7F6BC17E7D3247736 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		E60120CDFAF87D6F6FE8F30D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		F1B982487CD4A0CD3AD15245 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0825A457D91798CA4E31A437 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,8 +149,6 @@
 				6C9680511B05497400D5FC74 /* My Games iOS */,
 				6C9680671B05497400D5FC74 /* My Games iOSTests */,
 				6C9680501B05497400D5FC74 /* Products */,
-				F4F664C604950D44D72F28C0 /* Pods */,
-				DEC578AFF4973A00FDE63617 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,23 +208,6 @@
 				6C9680691B05497400D5FC74 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DEC578AFF4973A00FDE63617 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F1B982487CD4A0CD3AD15245 /* Pods.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F4F664C604950D44D72F28C0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E60120CDFAF87D6F6FE8F30D /* Pods.debug.xcconfig */,
-				AE1704E7F6BC17E7D3247736 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,7 +458,6 @@
 		};
 		6C96806F1B05497400D5FC74 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E60120CDFAF87D6F6FE8F30D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "My Games iOS/Info.plist";
@@ -493,7 +468,6 @@
 		};
 		6C9680701B05497400D5FC74 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE1704E7F6BC17E7D3247736 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "My Games iOS/Info.plist";
