@@ -191,7 +191,20 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
     
     // MARK: Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        // TODO: add 'next' logic
+        if textField == titleTextField {
+            titleTextField.resignFirstResponder()
+            publisherTextField.becomeFirstResponder()
+        } else if textField == publisherTextField {
+            publisherTextField.resignFirstResponder()
+            modesTextField.becomeFirstResponder()
+        } else if textField == modesTextField {
+            modesTextField.resignFirstResponder()
+            buyTextField.becomeFirstResponder()
+        } else if textField == buyTextField {
+            buyTextField.resignFirstResponder()
+            descTextView.becomeFirstResponder()
+        }
+        
         return true
     }
     

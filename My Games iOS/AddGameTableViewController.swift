@@ -166,6 +166,20 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
     
     // Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == titleTextField {
+            titleTextField.resignFirstResponder()
+            publisherTextField.becomeFirstResponder()
+        } else if textField == publisherTextField {
+            publisherTextField.resignFirstResponder()
+            modesTextField.becomeFirstResponder()
+        } else if textField == modesTextField {
+            modesTextField.resignFirstResponder()
+            buyTextField.becomeFirstResponder()
+        } else if textField == buyTextField {
+            buyTextField.resignFirstResponder()
+            descTextView.becomeFirstResponder()
+        }
+        
         return true
     }
     
