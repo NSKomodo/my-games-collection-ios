@@ -117,8 +117,6 @@ class ManageThumbnailsCollectionViewController: UICollectionViewController, UIAl
                     self.navigationController?.popViewControllerAnimated(true)
                 }
             })
-            
-            //reloadData()
         }
     }
 }
