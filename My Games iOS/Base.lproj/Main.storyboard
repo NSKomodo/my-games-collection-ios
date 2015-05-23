@@ -1017,7 +1017,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">This app was made by Jorge Tapia at Full Sail University for the Mobile Interfaces and Usability course taught by Douglas Arley on May, 2015. All text descriptions were taken from Gamestop and are of their property. All products depicted here and their trademarks are property of their respective owners, used exclusively for academic purposes.  Gamestop: http://gamestop.com
+                                        <string key="content">This app was made by Jorge Tapia at Full Sail University for the Mobile Interfaces and Usability course taught by Douglas Arley on May, 2015. All text descriptions were taken from Gamestop and are of their property. All products depicted here and their trademarks are property of their respective owners, used exclusively for academic and demonstration purposes.  Gamestop: http://gamestop.com
 
 Full Sail University: http://fullsail.edu  </string>
                                         <attributes>
