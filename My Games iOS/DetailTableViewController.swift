@@ -97,19 +97,17 @@ class DetailTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 88
         } else if indexPath.section == 3 {
             if game.desc.isEmpty {
                 return 44
             } else {
-                let descText = game.desc as NSString
-                
                 let textAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(16)]
-                let textSize = descText.boundingRectWithSize(CGSizeMake(UIScreen.mainScreen().bounds.size.width, CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: textAttributes, context: nil)
+                let textSize = game.desc.boundingRectWithSize(CGSizeMake(view.frame.size.width - 30, CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: textAttributes, context: nil)
                 
-                return 88 + textSize.height
+                return textSize.height + 44
             }
         } else {
             return 44

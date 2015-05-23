@@ -14,6 +14,8 @@ class SearchResultsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        clearsSelectionOnViewWillAppear = true
     }
     
     override func didReceiveMemoryWarning() {

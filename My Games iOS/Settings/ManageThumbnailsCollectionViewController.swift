@@ -33,21 +33,6 @@ class ManageThumbnailsCollectionViewController: UICollectionViewController, UIAl
         alert.show()
     }
     
-    // MARK: Methods
-    func reloadData() {
-        data = Thumbnail.allThumbnails() as! [Thumbnail]
-        
-        collectionView?.performBatchUpdates({ () -> Void in
-            collectionView?.reloadSections(NSIndexSet(index: 0))
-        }, completion: { (completed: Bool) -> Void in
-            collectionView?.reloadData()
-        })
-        
-        if data.count == 0 {
-            trashButton.enabled = false
-        }
-    }
-    
     // Collection view data source
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -116,16 +101,24 @@ class ManageThumbnailsCollectionViewController: UICollectionViewController, UIAl
             appDelegate.saveContext()
             
             for indexPath in selectedIndexPaths {
-                Thumbnail.remove(data[indexPath.row])
+                Thumbnail.remove(self.data[indexPath.row])
             }
             
-            trashButton.enabled = false
+            self.data = Thumbnail.allThumbnails() as! [Thumbnail]
             
-            reloadData()
+            collectionView?.performBatchUpdates({ () -> Void in
+                collectionView?.deleteItemsAtIndexPaths(selectedIndexPaths)
+            }, completion: { (completed: Bool) -> Void in
+                
+                self.collectionView?.reloadData()
+                self.trashButton.enabled = false
+                
+                if self.data.count == 0 {
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+            })
             
-            if data.count == 0 {
-                self.navigationController?.popViewControllerAnimated(true)
-            }
+            //reloadData()
         }
     }
 }

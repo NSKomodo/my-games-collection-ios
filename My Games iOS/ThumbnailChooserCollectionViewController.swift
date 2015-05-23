@@ -95,7 +95,6 @@ class ThumbnailChooserCollectionViewController: UICollectionViewController {
         var selectionImage = cell?.viewWithTag(2) as! UIImageView
         selectionImage.hidden = false
         
-        
         chooseButton.enabled = true
         selectedIndexPath = indexPath
     }
