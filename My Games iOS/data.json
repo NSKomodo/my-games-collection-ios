@@ -48,7 +48,7 @@
             "platform": "PS4",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Call of Duty: Ghosts"
         },
         {
             "title": "Battlefield Hardline",
@@ -58,7 +58,7 @@
             "platform": "PS4",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Battlefield Hardline"
         },
         {
             "title": "Battlefield 4",
@@ -68,7 +68,7 @@
             "platform": "PS4",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Battlefield 4"
         },
         {
             "title": "Call of Duty: Advanced Warfare",
@@ -88,7 +88,7 @@
             "platform": "XBOX ONE",
             "modes": "Online Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Titanfall"
         },
         {
             "title": "Call of Duty: Ghosts",
@@ -98,7 +98,7 @@
             "platform": "XBOX ONE",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Call of Duty: Ghosts"
         },
         {
             "title": "Halo: The Master Chief Collection",
@@ -108,7 +108,7 @@
             "platform": "XBOX ONE",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Halo: The Master Chief Collection"
         }
     ],
     "Third Person Shooter": [
@@ -120,7 +120,7 @@
             "platform": "PS4",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Grand Theft Auto V"
         },
         {
             "title": "KNACK",
@@ -130,7 +130,7 @@
             "platform": "PS4",
             "modes": "Single Player",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "KNACK"
         },
         {
             "title": "Tomb Raider Definitive Edition",
@@ -140,7 +140,7 @@
             "platform": "PS4",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Tomb Raider Definitive Edition"
         },
         {
             "title": "inFAMOUS Second Son",
@@ -150,7 +150,7 @@
             "platform": "PS4",
             "modes": "Single Player",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "inFAMOUS Second Son"
         },
         {
             "title": "Sniper Elite III",
@@ -160,7 +160,7 @@
             "platform": "PS4",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Sniper Elite III"
         },
         {
             "title": "The Last Of Us Remastered",
@@ -170,7 +170,7 @@
             "platform": "PS4",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "The Last Of Us Remastered"
         },
         {
             "title": "Dead Rising 3",
@@ -180,7 +180,7 @@
             "platform": "XBOX ONE",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Dead Rising 3"
         },
         {
             "title": "Plants VS Zombies: Garden Warfare",
@@ -190,7 +190,7 @@
             "platform": "XBOX ONE",
             "modes": "Online Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Plants VS Zombies: Garden Warfare"
         }
     ],
     "Role Playing Game": [
@@ -202,7 +202,7 @@
             "platform": "PS4",
             "modes": "Single Player",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Middle-Earth: Shadow of Mordor"
         },
         {
             "title": "RYSE: Son of Rome",
@@ -212,7 +212,7 @@
             "platform": "XBOX ONE",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "RYSE: Son of Rome"
         }
     ],
     "Sports": [
@@ -224,7 +224,7 @@
             "platform": "XBOX ONE",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "FIFA 15"
         }
     ],
     "Fighting": [
@@ -248,7 +248,7 @@
             "platform": "PS4",
             "modes": "Single Player\nOnline Multiplayer",
             "buy": "",
-            "thumbnail": "Call of Duty: Advanced Warfare"
+            "thumbnail": "Just Dance 2015"
         }
     ]
 }
