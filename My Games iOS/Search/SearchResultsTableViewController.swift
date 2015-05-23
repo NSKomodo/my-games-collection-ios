@@ -35,6 +35,7 @@ class SearchResultsTableViewController: UITableViewController {
         let game = searchResults[indexPath.row]
         
         var cell = tableView.dequeueReusableCellWithIdentifier("SearchResultCell") as! UITableViewCell
+        cell.imageView?.image = UIImage(data: game.thumbnail.data)
         cell.textLabel?.text = game.title
         cell.detailTextLabel?.text = game.platform.title
         
