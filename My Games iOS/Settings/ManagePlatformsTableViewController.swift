@@ -51,6 +51,11 @@ class ManagePlatformsTableViewController: UITableViewController, UIAlertViewDele
         alert.show()
     }
     
+    // MARK: Methods
+    func resignOnTap() {
+        view.endEditing(true)
+    }
+    
     // MARK: Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
