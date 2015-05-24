@@ -85,6 +85,28 @@ extension Thumbnail {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedObjectContext = appDelegate.managedObjectContext
         
+        var defaultThumbnail = Thumbnail.thumbnailWithTitle("default_image")
+        
+        if defaultThumbnail == nil {
+            var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            var managedObjectContext = appDelegate.managedObjectContext
+            
+            let thumbnailEntity = NSEntityDescription.entityForName("Thumbnail", inManagedObjectContext: managedObjectContext!)
+            defaultThumbnail = Thumbnail(entity: thumbnailEntity!, insertIntoManagedObjectContext: managedObjectContext!)
+            defaultThumbnail?.title = "default_image"
+            defaultThumbnail?.data = UIImagePNGRepresentation(UIImage(named: "default_image"))
+            
+            appDelegate.saveContext()
+        }
+        
+        var allGames = Game.allGames() as! [Game]
+        
+        for game in allGames {
+            if game.thumbnail == thumbnail {
+                game.thumbnail = defaultThumbnail!
+            }
+        }
+        
         managedObjectContext?.deleteObject(thumbnail)
         
         appDelegate.saveContext()
@@ -94,10 +116,30 @@ extension Thumbnail {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedObjectContext = appDelegate.managedObjectContext
         
+        var defaultThumbnail = Thumbnail.thumbnailWithTitle("default_image")
+        
+        if defaultThumbnail == nil {
+            var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            var managedObjectContext = appDelegate.managedObjectContext
+            
+            let thumbnailEntity = NSEntityDescription.entityForName("Thumbnail", inManagedObjectContext: managedObjectContext!)
+            defaultThumbnail = Thumbnail(entity: thumbnailEntity!, insertIntoManagedObjectContext: managedObjectContext!)
+            defaultThumbnail?.title = "default_image"
+            defaultThumbnail?.data = UIImagePNGRepresentation(UIImage(named: "default_image"))
+            
+            appDelegate.saveContext()
+        }
+        
+        var allGames = Game.allGames() as! [Game]
+        
+        for game in allGames {
+            game.thumbnail = defaultThumbnail!
+        }
+        
         let items = allThumbnails()
         
         for thumbnail in items! {
-            if (thumbnail as! Thumbnail).title == "default_image" {
+            if thumbnail as! Thumbnail == defaultThumbnail! {
                 continue
             }
             

@@ -148,7 +148,7 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
         }
     }
     
-    // Methods:
+    // MARK: Methods:
     func resignOnTap() {
         view.endEditing(true)
     }

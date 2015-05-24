@@ -158,7 +158,7 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
     }
     
     
-    // Methods:
+    // MARK: Methods:
     func captureOriginalValues() {
         originalThumbnail = delegate.game.thumbnail.title
         

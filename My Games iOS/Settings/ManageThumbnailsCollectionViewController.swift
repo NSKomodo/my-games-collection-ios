@@ -76,29 +76,7 @@ class ManageThumbnailsCollectionViewController: UICollectionViewController, UIAl
     // Alert view delegate
     func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
         if buttonIndex != alertView.cancelButtonIndex {
-            var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            
             let selectedIndexPaths = collectionView?.indexPathsForSelectedItems() as! [NSIndexPath]
-            
-            var defaultThumbnail = Thumbnail.thumbnailWithTitle("default_image")
-            
-            if defaultThumbnail == nil {
-                var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                var managedObjectContext = appDelegate.managedObjectContext
-                
-                let thumbnailEntity = NSEntityDescription.entityForName("Thumbnail", inManagedObjectContext: managedObjectContext!)
-                defaultThumbnail = Thumbnail(entity: thumbnailEntity!, insertIntoManagedObjectContext: managedObjectContext!)
-                defaultThumbnail?.title = "default_image"
-                defaultThumbnail?.data = UIImagePNGRepresentation(UIImage(named: "default_image"))
-                
-                appDelegate.saveContext()
-            }
-            
-            for game in Game.allGames() as! [Game] {
-                game.thumbnail = defaultThumbnail!
-            }
-            
-            appDelegate.saveContext()
             
             for indexPath in selectedIndexPaths {
                 Thumbnail.remove(self.data[indexPath.row])
