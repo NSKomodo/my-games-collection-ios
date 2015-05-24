@@ -24,6 +24,12 @@ class PlatformChooserTableViewController: UITableViewController, UITextFieldDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let singleTapRecognizer = UITapGestureRecognizer(target: self, action: "resignOnTap")
+        singleTapRecognizer.numberOfTapsRequired = 1
+        singleTapRecognizer.numberOfTapsRequired = 1
+        singleTapRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(singleTapRecognizer)
+        
         chooseButton.enabled = false
         
         clearsSelectionOnViewWillAppear = true
@@ -93,6 +99,10 @@ class PlatformChooserTableViewController: UITableViewController, UITextFieldDele
         addPlatformButton.enabled = !platformTitleTextField.text.isEmpty
     }
     
+    // MARK: Methods
+    func resignOnTap() {
+        view.endEditing(true)
+    }
     
     // MARK: Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

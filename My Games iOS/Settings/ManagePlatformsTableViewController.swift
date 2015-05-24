@@ -18,12 +18,6 @@ class ManagePlatformsTableViewController: UITableViewController, UIAlertViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let singleTapRecognizer = UITapGestureRecognizer(target: self, action: "resignOnTap")
-        singleTapRecognizer.numberOfTapsRequired = 1
-        singleTapRecognizer.numberOfTapsRequired = 1
-        singleTapRecognizer.cancelsTouchesInView = false
-        view.addGestureRecognizer(singleTapRecognizer)
-        
         clearsSelectionOnViewWillAppear = true
         reloadData()
     }
@@ -33,10 +27,6 @@ class ManagePlatformsTableViewController: UITableViewController, UIAlertViewDele
     }
     
     // MARK: Methods
-    func resignOnTap() {
-        view.endEditing(true)
-    }
-    
     func reloadData() {
         data = Platform.allPlatforms() as! [Platform]
         tableView.reloadData()

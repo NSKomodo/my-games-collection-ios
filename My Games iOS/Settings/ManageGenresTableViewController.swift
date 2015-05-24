@@ -33,10 +33,6 @@ class ManageGenresTableViewController: UITableViewController, UIAlertViewDelegat
     }
     
     // MARK: Methods
-    func resignOnTap() {
-        view.endEditing(true)
-    }
-    
     func reloadData() {
         data = Genre.allGenres() as! [Genre]
         tableView.reloadData()
