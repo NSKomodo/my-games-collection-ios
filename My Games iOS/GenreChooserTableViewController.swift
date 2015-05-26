@@ -143,6 +143,8 @@ class GenreChooserTableViewController: UITableViewController, UITextFieldDelegat
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "Add New Genre"
+        } else if section == 1 {
+            return Genre.allGenres()?.count > 0 ? "Choose Existing" : nil
         } else {
             return nil
         }

@@ -16,7 +16,7 @@
 		6C7AB0BF1B06DC020095482E /* PlatformExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AB0BE1B06DC020095482E /* PlatformExtension.swift */; };
 		6C7AB0C11B06DC2F0095482E /* GenreExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AB0C01B06DC2F0095482E /* GenreExtension.swift */; };
 		6C7AB0CC1B07160F0095482E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AB0CB1B07160F0095482E /* SettingsTableViewController.swift */; };
-		6C7AB0CF1B0732E60095482E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AB0CE1B0732E60095482E /* AboutViewController.swift */; };
+		6C7AB0CF1B0732E60095482E /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AB0CE1B0732E60095482E /* AboutTableViewController.swift */; };
 		6C9680551B05497400D5FC74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9680541B05497400D5FC74 /* AppDelegate.swift */; };
 		6C9680571B05497400D5FC74 /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9680561B05497400D5FC74 /* MasterTableViewController.swift */; };
 		6C96805A1B05497400D5FC74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C9680581B05497400D5FC74 /* Main.storyboard */; };
@@ -57,7 +57,7 @@
 		6C7AB0BE1B06DC020095482E /* PlatformExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformExtension.swift; sourceTree = "<group>"; };
 		6C7AB0C01B06DC2F0095482E /* GenreExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreExtension.swift; sourceTree = "<group>"; };
 		6C7AB0CB1B07160F0095482E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		6C7AB0CE1B0732E60095482E /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		6C7AB0CE1B0732E60095482E /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		6C96804F1B05497400D5FC74 /* My Games iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Games iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C9680531B05497400D5FC74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C9680541B05497400D5FC74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				6C7AB0CB1B07160F0095482E /* SettingsTableViewController.swift */,
-				6C7AB0CE1B0732E60095482E /* AboutViewController.swift */,
+				6C7AB0CE1B0732E60095482E /* AboutTableViewController.swift */,
 				6CC858A81B092F8300531C6A /* ManageGenresTableViewController.swift */,
 				6CC858AA1B092FAB00531C6A /* ManagePlatformsTableViewController.swift */,
 				6CF067821B0B99BD00DD420D /* ManageThumbnailsCollectionViewController.swift */,
@@ -259,6 +259,7 @@
 				TargetAttributes = {
 					6C96804E1B05497400D5FC74 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = RTCYSWYBFH;
 					};
 					6C9680631B05497400D5FC74 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -325,7 +326,7 @@
 				6C7AB0C11B06DC2F0095482E /* GenreExtension.swift in Sources */,
 				6CC858AB1B092FAB00531C6A /* ManagePlatformsTableViewController.swift in Sources */,
 				6C7AB0BB1B06D8F50095482E /* GameExtension.swift in Sources */,
-				6C7AB0CF1B0732E60095482E /* AboutViewController.swift in Sources */,
+				6C7AB0CF1B0732E60095482E /* AboutTableViewController.swift in Sources */,
 				6C7AB0AF1B06B8B60095482E /* Model.xcdatamodeld in Sources */,
 				6CF067811B0B838B00DD420D /* Game.swift in Sources */,
 				6CE9C6CC1B07B4C700CF7645 /* DetailTableViewController.swift in Sources */,
@@ -460,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "My Games iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -470,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "My Games iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

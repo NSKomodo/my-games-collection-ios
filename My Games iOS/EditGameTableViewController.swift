@@ -218,7 +218,7 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
         if buttonIndex == 1 {
             // Simulator handler
             if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-                UIAlertView(title: "My Game Collection", message: "It is not possible to take photos using the iOS Simulator.", delegate: nil, cancelButtonTitle: "Dismiss").show()
+                UIAlertView(title: "My Games", message: "It is not possible to take photos using the iOS Simulator.", delegate: nil, cancelButtonTitle: "Dismiss").show()
                 
                 return
             }

@@ -143,6 +143,8 @@ class PlatformChooserTableViewController: UITableViewController, UITextFieldDele
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "Add New Platform"
+        } else if section == 1 {
+            return Platform.allPlatforms()?.count > 0 ? "Choose Existing" : nil
         } else {
             return nil
         }

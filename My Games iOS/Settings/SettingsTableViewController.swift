@@ -61,13 +61,13 @@ class SettingsTableViewController: UITableViewController, UIAlertViewDelegate {
             performSegueWithIdentifier("manageThumbnailsSegue", sender: nil)
         } else if indexPath.section == 2 && indexPath.row == 0  {
             // Import JSON content
-            alert = UIAlertView(title: "My Games Collection", message: "This action will replace all current data with content from the provided JSON file and cannot be undone. Do you want to import dummy content from JSON file?", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Yes")
+            alert = UIAlertView(title: "My Games", message: "This action will replace all current data with sample content and cannot be undone. Do you want to import the sample content?", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Yes")
             alert?.tag = 3
             alert?.show()
             
         } else if indexPath.section == 2 && indexPath.row == 1  {
             // Delete all data
-            alert = UIAlertView(title: "My Games Collection", message: "This action will delete all and cannot be undone. Do you want to delete all data?", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Yes")
+            alert = UIAlertView(title: "My Games", message: "This action will delete all and cannot be undone. Do you want to delete all data?", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Yes")
             alert?.tag = 4
             alert?.show()
         }
