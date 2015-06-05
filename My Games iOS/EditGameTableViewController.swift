@@ -91,10 +91,6 @@ class EditGameTableViewController: UITableViewController, UITextFieldDelegate, U
 
     // MARK: Actions
     @IBAction func cancelAction(sender: AnyObject) {
-        if thumbnail != nil {
-            Thumbnail.remove(thumbnail!)
-        }
-        
         resignOnTap()
         dismissViewControllerAnimated(true, completion: nil)
     }

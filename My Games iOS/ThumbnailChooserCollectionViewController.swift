@@ -35,7 +35,6 @@ class ThumbnailChooserCollectionViewController: UICollectionViewController {
     @IBAction func chooseAction(sender: AnyObject) {
         if delegate.isKindOfClass(EditGameTableViewController) {
             (delegate as! EditGameTableViewController).thumbnail = data[selectedIndexPath!.row]
-            (delegate as! EditGameTableViewController).delegate.game.thumbnail = data[selectedIndexPath!.row]
             (delegate as! EditGameTableViewController).addImageButton.setImage(UIImage(data: data[selectedIndexPath!.row].data), forState: UIControlState.Normal)
             
             dismissViewControllerAnimated(true, completion: { () -> Void in

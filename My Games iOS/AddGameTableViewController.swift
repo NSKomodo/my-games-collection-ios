@@ -51,10 +51,6 @@ class AddGameTableViewController: UITableViewController, UITextFieldDelegate, UI
     
     // MARK: Actions
     @IBAction func cancelAction(sender: AnyObject) {
-        if thumbnail != nil {
-            Thumbnail.remove(thumbnail!)
-        }
-        
         dismissViewControllerAnimated(true, completion: nil)
     }
 
