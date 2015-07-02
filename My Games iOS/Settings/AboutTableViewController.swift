@@ -24,7 +24,7 @@ class AboutTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 1 {
             if indexPath.row == 0 {
-                UIApplication.sharedApplication().openURL(NSURL(string: "http://github.com/georgetapia")!)
+                UIApplication.sharedApplication().openURL(NSURL(string: "http://github.com/itsProf")!)
             } else if indexPath.row == 1 {
                 UIApplication.sharedApplication().openURL(NSURL(string: "http://twitter.com/itsProf")!)
             } else if indexPath.row == 2 {
