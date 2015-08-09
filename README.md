@@ -9,4 +9,5 @@ Conveniently start your own collection from scratch or by importing the included
 Managing your video game collection will never be easier with My Games Collection.
 
 Available on the App Store:
+
 https://itunes.apple.com/us/app/id998676924?mt=8
